@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <div title='选择单位部门岗位用户' data-type='form' class="bc-page"
-	data-js='<s:url value="/bc/identity/identity.js" />,<s:url value="/bc-test/identity/select.js" />'
+	data-js='<s:url value="/bc/identity/identity.js" />,<s:url value="/bc-test/identity/select.js" />,<s:url value="/bc/libs/image.js" />'
 	data-initMethod='bc.selectIdentityTest.init'
 	data-option='{"width":500,"minWidth":250,"minHeight":100,"modal":false}'
 	style="overflow-y: auto;">
@@ -33,5 +33,9 @@
 		<input id="selectRoles" type="button" value="选择角色(多选)"><br/>
 		<input id="selectResource" type="button" value="选择资源(单选)">
 		<input id="selectResources" type="button" value="选择资源(多选)">
+	</fieldset>
+	<fieldset>
+		<legend>上传图片</legend>
+		<input id="uploadImage" type="button" value="上传图片">
 	</fieldset>
 </div>
