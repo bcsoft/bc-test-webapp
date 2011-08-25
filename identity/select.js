@@ -139,16 +139,8 @@ bc.selectIdentityTest = {
 				}
 			});
 		});
-		
-		//上传图片
-		$form.find("#uploadImage").click(function(){
-			bc.image.crop({
-				puid:'puid',ptype:'ptype1',
-				//empty:"/bc-business/carMan/empty.jpg",
-				onOk: function(resource){
-					logger.info($.param(resource));
-				}
-			});
-		});
+	},
+	onOk4imageEditor:function(json){
+		logger.info($.param(json));
 	}
 };
