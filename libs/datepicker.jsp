@@ -6,7 +6,10 @@
 	style="overflow-y: auto;">
 	<fieldset>
 		<legend>默认配置</legend>
-		<input type="text" class="bc-date" value="2011-01-01">
+		选日期<input type="text" class="bc-date" value="2011-01-01" style="width:80px;">
+		选时间<input type="text" class="bc-time" value="12:10" style="width:60px;"><br/>
+		选日期+时间<input type="text" class="bc-datetime" value="2011-01-01 12:10" style="width:120px;">
+		选日期+时间<input type="text" class="bc-datetime" value="2011-01-01 12:10:30" data-cfg='{timeFormat:"hh:mm:ss",showSecond:true}' style="width:150px;">
 	</fieldset>
 	<fieldset>
 		<legend>自定义格式</legend>
