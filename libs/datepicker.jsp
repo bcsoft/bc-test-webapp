@@ -2,13 +2,15 @@
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <div title='选择日日期' data-type='form' class="bc-page"
 	data-js='<s:url value="/bc-test/libs/datepicker.js" />'
+	data-initMethod='bc.datepickerTest.init'
 	data-option='{"width":500}'
 	style="overflow-y: auto;">
+	<input type="button" id="validate" value="验证测试"/>
 	<fieldset>
 		<legend>默认配置</legend>
-		选日期<input type="text" class="bc-date" value="2011-01-01" style="width:80px;">
-		选时间<input type="text" class="bc-time" value="12:10" style="width:60px;"><br/>
-		选日期+时间<input type="text" class="bc-datetime" value="2011-01-01 12:10" style="width:120px;">
+		选日期<input type="text" class="bc-date" value="2011-01-01" style="width:80px;" data-validate="date">
+		选时间<input type="text" class="bc-time" value="12:10" style="width:60px;" data-validate="time"><br/>
+		选日期+时间<input type="text" class="bc-datetime" value="2011-01-01 12:10" style="width:120px;" data-validate="datetime">
 		选日期+时间<input type="text" class="bc-datetime" value="2011-01-01 12:10:30" data-cfg='{timeFormat:"hh:mm:ss",showSecond:true}' style="width:150px;">
 	</fieldset>
 	<fieldset>
