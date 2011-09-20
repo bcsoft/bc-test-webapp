@@ -22,30 +22,33 @@
 <script type="text/javascript" src="../../bc/libs/logger.js"></script>
 <script type="text/javascript" src="../../bc/libs/tabs.js"></script>
 </head>
-<body class="bc" style="font-size:12px;">
+<body class="bc" style="font-size:12px;overflow: auto;">
 	<div id="themeSwitcher" style="position:absolute;right:20px;top:10px;"></div>
 	<div style="height:400px">
     <h1>Horizontal demo1</h1>
-    <div id="tabs1" class="bc-tabs layout-top ui-widget ui-helper-reset">
-        <div class="tabsContainer sliding">
-            <div class="prev ui-widget-content">
-	            <a href="#" class="prev ui-state-default ui-state-disabled"><span class="ui-icon ui-icon-triangle-1-w"></span></a>
-            </div>
+    <div id="tabs1" class="bc-tabs layout-top ui-widget ui-helper-reset" style="width:700px" 
+    	data-cfg="{height:250}">
+        <div class="tabsContainer">
             <div class="slideContainer">
                 <ul class="tabs ui-helper-reset">
                     <li class="tab ui-widget-content first active"><a href="#content_1" class="ui-state-default ui-state-active">基本信息</a></li>
                     <li class="tab ui-widget-content"><a href="#content_2" class="ui-state-default">Horizontal Tab #2</a></li>
                     <li class="tab ui-widget-content"><a href="test.htm" class="ui-state-default">Horizontal Tab #3</a></li>
-                    <li class="tab ui-widget-content"><a href="#content_4" class="ui-state-default">Horizontal Tab #4</a></li>
+                    <li class="tab ui-widget-content"><a href="/bc/bc/error/waiting?t=2" class="ui-state-default">等待一下</a></li>
                     <li class="tab ui-widget-content"><a href="#content_5" class="ui-state-default">Horizontal Tab #5</a></li>
                     <li class="tab ui-widget-content"><a href="#content_6" class="ui-state-default">Horizontal Tab #6</a></li>
                     <li class="tab ui-widget-content"><a href="#content_7" class="ui-state-default">Horizontal Tab #7</a></li>
                     <li class="tab ui-widget-content"><a href="#content_8" class="ui-state-default">Horizontal Tab #8</a></li>
                 </ul>
             </div>
+            <!-- 
+            <div class="prev ui-widget-content">
+	            <a href="#" class="prev ui-state-default ui-state-disabled"><span class="ui-icon ui-icon-triangle-1-w"></span></a>
+            </div>
             <div class="next ui-widget-content">
 	            <a href="#" class="next ui-state-default"><span class="ui-icon ui-icon-triangle-1-e"></span></a>
             </div>
+             -->
         </div>
         <div class="contentContainer ui-helper-reset ui-widget-content">
              <div id="content_1" class="content active">
@@ -100,7 +103,7 @@
 	</div>
 	<div style="height:400px">
     <h1>Horizontal demo2</h1>
-    <div id="tabs2" class="bc-tabs layout-top ui-widget ui-helper-reset">
+    <div id="tabs2" class="bc-tabs layout-top ui-widget ui-helper-reset" data-cfg="{height:250,animate:false}">
         <div class="tabsContainer">
             <div class="prev ui-widget-content ui-corner-tl">
 	            <a href="#" class="prev ui-state-default ui-state-disabled ui-corner-tl"><span class="ui-icon ui-icon-triangle-1-w"></span></a>
@@ -121,6 +124,10 @@
                  <h2>Horizontal Tab #1</h2>
                  <div>
                      <p>中文测试， duis netus ut posuere feugiat arcu, purus wisi quis fringilla at, nunc ut eget elit duis erat praesent, ut fermentum lacus turpis cras. Justo gravida erat quam mauris purus, aliquam quisque, eget nisl. Pellentesque nibh duis odio morbi quam, scelerisque convallis aenean quam tincidunt ornare nam nec feugiat sodales tristique.</p>
+                     <blockquote><p>Aliquam commodo ullamcorper aenean erat. Nullam vel justo in neque porttitor eget laoreet. Aenean lacus adipiscing.</p></blockquote>
+                     <p>Aliquam commodo ullamcorper erat. Nullam vel justo cras porttitor laoreet. Aenean lacus dui, consequat eu, adipiscing nonummy, eget non, nisi. Morbi nunc est, dignissim non, ornare sed, luctus eu, massa. Vivamus tincidunt diam nec eget urna.</p>
+                     <blockquote><p>Aliquam commodo ullamcorper aenean erat. Nullam vel justo in neque porttitor eget laoreet. Aenean lacus adipiscing.</p></blockquote>
+                     <p>Aliquam commodo ullamcorper erat. Nullam vel justo cras porttitor laoreet. Aenean lacus dui, consequat eu, adipiscing nonummy, eget non, nisi. Morbi nunc est, dignissim non, ornare sed, luctus eu, massa. Vivamus tincidunt diam nec eget urna.</p>
                  </div>
              </div>
              <div id="content_2" class="content">
@@ -149,9 +156,15 @@
 		var initTabs = true;
 		if(initTabs){
 			//初始化tabs
-			$('div.bc-tabs').bctabs({
-				height:200
+			$('div#tabs1').bctabs({
+				load:function(event,ui){
+					logger.info("load:" + $(this).attr("class"));
+				},
+				show:function(event,ui){
+					logger.info("show:" + ui.content.attr("class"));
+				}
 			});
+			$('div#tabs2').bctabs();
 		}
 	});
 	</script>
