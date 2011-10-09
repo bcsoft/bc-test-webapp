@@ -1,0 +1,16 @@
+.bc-taskbar {
+	position: relative;
+	display: block;
+	margin: 0;
+	padding: 0;
+	background-color: green;
+}
+
+.bc-taskbar>a {
+	outline:none;
+	display: inline-block;
+	margin: 0;
+	padding: 10px;
+	border: 0;
+	text-decoration: none;
+}
