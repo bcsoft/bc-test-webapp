@@ -9,8 +9,8 @@
 		<legend>选择用户信息</legend>
 		<input id="selectUser" type="button" value="选择用户(单选)">
 		<input id="selectUsers" type="button" value="选择用户(多选)"><br/>
-		<input id="selectUserHistory" type="button" value="选择用户历史(单选)">
-		<input id="selectUserHistorys" type="button" value="选择用户历史(多选)">
+		<input id="selectUserHistory" type="button" value="选择用户历史(单选)" style="display: none">
+		<input id="selectUserHistorys" type="button" value="选择用户历史(多选)" style="display: none">
 	</fieldset>
 	<fieldset>
 		<legend>选择单位信息</legend>

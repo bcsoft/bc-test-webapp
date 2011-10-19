@@ -7,8 +7,7 @@ bc.selectIdentityTest = {
 			bc.identity.selectUser({
 				history: false,
 				onOk: function(user){
-					logger.info($.param(user));
-					alert(user.id + "," + user.name);
+					logger.info($.toJSON(user));
 				}
 			});
 		});
@@ -17,8 +16,7 @@ bc.selectIdentityTest = {
 				multiple: true,
 				history: false,
 				onOk: function(users){
-					logger.info($.param(users));
-					alert(users[0].id + "," + users[0].name);
+					logger.info($.toJSON(users));
 				}
 			});
 		});
@@ -29,8 +27,7 @@ bc.selectIdentityTest = {
 				multiple: false,//此为默认值，可不设置
 				history: true,//此为默认值，可不设置
 				onOk: function(user){
-					logger.info($.param(user));
-					alert(user.id + "," + user.name);
+					logger.info($.toJSON(user));
 				}
 			});
 		});
@@ -39,8 +36,7 @@ bc.selectIdentityTest = {
 				multiple: true,
 				history: true,//此为默认值，可不设置
 				onOk: function(users){
-					logger.info($.param(users));
-					alert(users[0].id + "," + users[0].name);
+					logger.info($.toJSON(users));
 				}
 			});
 		});
@@ -49,8 +45,7 @@ bc.selectIdentityTest = {
 		$form.find("#selectUnit").click(function(){
 			bc.identity.selectUnit({
 				onOk: function(unit){
-					logger.info($.param(unit));
-					alert(unit.id + "," + unit.name);
+					logger.info($.toJSON(unit));
 				}
 			});
 		});
@@ -58,8 +53,7 @@ bc.selectIdentityTest = {
 			bc.identity.selectUnit({
 				multiple: true,
 				onOk: function(units){
-					logger.info($.param(units));
-					alert(units[0].id + "," + units[0].name);
+					logger.info($.toJSON(units));
 				}
 			});
 		});
@@ -68,8 +62,7 @@ bc.selectIdentityTest = {
 		$form.find("#selectOU").click(function(){
 			bc.identity.selectUnitOrDepartment({
 				onOk: function(ou){
-					logger.info($.param(ou));
-					alert(ou.id + "," + ou.name);
+					logger.info($.toJSON(ou));
 				}
 			});
 		});
@@ -77,8 +70,7 @@ bc.selectIdentityTest = {
 			bc.identity.selectUnitOrDepartment({
 				multiple: true,
 				onOk: function(ous){
-					logger.info($.param(ous));
-					alert(ous[0].id + "," + ous[0].name);
+					logger.info($.toJSON(ous));
 				}
 			});
 		});
@@ -87,8 +79,7 @@ bc.selectIdentityTest = {
 		$form.find("#selectGroup").click(function(){
 			bc.identity.selectGroup({
 				onOk: function(group){
-					logger.info($.param(group));
-					alert(group.id + "," + group.name);
+					logger.info($.toJSON(group));
 				}
 			});
 		});
@@ -96,8 +87,7 @@ bc.selectIdentityTest = {
 			bc.identity.selectGroup({
 				multiple: true,
 				onOk: function(groups){
-					logger.info($.param(groups));
-					alert(groups[0].id + "," + groups[0].name);
+					logger.info($.toJSON(groups));
 				}
 			});
 		});
@@ -106,8 +96,7 @@ bc.selectIdentityTest = {
 		$form.find("#selectRole").click(function(){
 			bc.identity.selectRole({
 				onOk: function(role){
-					logger.info($.param(role));
-					alert(role.id + "," + role.name);
+					logger.info($.toJSON(role));
 				}
 			});
 		});
@@ -115,8 +104,7 @@ bc.selectIdentityTest = {
 			bc.identity.selectRole({
 				multiple: true,
 				onOk: function(roles){
-					logger.info($.param(roles));
-					alert(roles[0].id + "," + roles[0].name);
+					logger.info($.toJSON(roles));
 				}
 			});
 		});
@@ -125,8 +113,7 @@ bc.selectIdentityTest = {
 		$form.find("#selectResource").click(function(){
 			bc.identity.selectResource({
 				onOk: function(resource){
-					logger.info($.param(resource));
-					alert(resource.id + "," + resource.name);
+					logger.info($.toJSON(resource));
 				}
 			});
 		});
@@ -134,8 +121,7 @@ bc.selectIdentityTest = {
 			bc.identity.selectResource({
 				multiple: true,
 				onOk: function(resources){
-					logger.info($.param(resources));
-					alert(resources[0].id + "," + resources[0].name);
+					logger.info($.toJSON(resources));
 				}
 			});
 		});
