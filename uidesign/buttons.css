@@ -1,0 +1,7 @@
+.bc-radios {
+	display: inline-block;
+}
+
+.bc-radios .ui-button.ui-state-active {
+	margin-right: 0px;
+}
