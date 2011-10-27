@@ -34,11 +34,11 @@
 		
 		<div id="radioDesign" class="bc-radioGroup ui-buttonset" 
 			data-change="bc.viewDesign.changeRadio" data-key="status" data-action="reloadGrid">
-			<div class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-left ui-state-active" data-value="v1">
+			<div class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-left ui-state-active" data-value="0">
 				<span class="ui-button-text">单选21</span>
-			</div><div class="ui-button ui-widget ui-state-default ui-button-text-only" data-value="v2">
+			</div><div class="ui-button ui-widget ui-state-default ui-button-text-only" data-value="1">
 				<span class="ui-button-text">单选22</span>
-			</div><div class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-right" data-value="v3">
+			</div><div class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-right" data-value="2">
 				<span class="ui-button-text">单选23</span>
 			</div>
 		</div>
