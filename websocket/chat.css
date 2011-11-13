@@ -1,0 +1,40 @@
+.bc-chatdemo div#chat {
+	clear: both;
+	width: 40em;
+	height: 20ex;
+	overflow: auto;
+	background-color: #f0f0f0;
+	padding: 4px;
+	border: 1px solid black;
+}
+
+.bc-chatdemo div#input {
+	clear: both;
+	width: 40em;
+	padding: 4px;
+	background-color: #e0e0e0;
+	border: 1px solid black;
+	border-top: 0px
+}
+
+.bc-chatdemo input#phrase {
+	width: 30em;
+	background-color: #e0f0f0;
+}
+
+.bc-chatdemo input#username {
+	width: 14em;
+	background-color: #e0f0f0;
+}
+
+.bc-chatdemo div.hidden {
+	display: none;
+}
+
+.bc-chatdemo span.from {
+	font-weight: bold;
+}
+
+.bc-chatdemo span.alert {
+	font-style: italic;
+}
