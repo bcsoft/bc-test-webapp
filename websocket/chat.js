@@ -17,7 +17,7 @@ bc.chatDemo = {
 				this._username = name;
 				//var location = document.location.toString().replace('http://',
 				//		'ws://').replace('https://', 'wss://');
-				var location = "ws://localhost:8080/ws/";
+				var location = bc.wsurl;//"ws://localhost:8080/ws/";
 				this._ws = new WebSocket(location, "chat");
 				this._ws.onopen = this._onopen;
 				this._ws.onmessage = this._onmessage;
@@ -28,13 +28,18 @@ bc.chatDemo = {
 				$form.find('#join').hide();
 				$form.find('#joined').show();
 				$form.find('#phrase').focus();
-				room._send(room._username, 'has joined!');
+				//room._send(room._username, 'has joined!');
 			},
 
 			_send : function(user, message) {
 				user = user.replace(':', '_');
-				if (this._ws)
-					this._ws.send(user + ':' + message);
+				if (this._ws){
+					if ("close" == message){
+						this._ws.send('{type:"close"}');
+					}else{
+						this._ws.send('{type:"send",msg:"' + user + ':' + message + '"}');
+					}
+				}
 			},
 
 			chat : function(text) {
@@ -75,21 +80,21 @@ bc.chatDemo = {
 		};
 		
 		$form.find('#username').attr('autocomplete','OFF');
-		$form.find('#username')[0].onkeyup = function(ev) { 
+		$form.find('#username').keyup(function(ev) { 
 			var keyc=getKeyCode(ev); 
 			if (keyc==13 || keyc==10) { 
 				room.join($form.find('#username').val()); 
 				return false; 
 			} 
 			return true; 
-		} ;        
+		});        
 
-		$form.find('#joinB')[0].onclick = function(event) {
+		$form.find('#joinB').click(function(event) {
 			room.join($form.find('#username').val());
 			return false;
-		};
+		});
 		$form.find('#phrase').attr('autocomplete', 'OFF');
-		$form.find('#phrase')[0].onkeyup = function(ev) {
+		$form.find('#phrase').keyup(function(ev) {
 			var keyc = getKeyCode(ev);
 			if (keyc == 13 || keyc == 10) {
 				room.chat($form.find('#phrase').val());
@@ -97,11 +102,15 @@ bc.chatDemo = {
 				return false;
 			}
 			return true;
-		};
-		$form.find('#sendB')[0].onclick = function(event) {
+		});
+		$form.find('#sendB').click(function(event) {
 			room.chat($form.find('#phrase').val());
 			$form.find('#phrase').val('');
 			return false;
-		};
+		});
+		
+		$form.dialog().bind("dialogclose",function(){
+			logger.info("chat:dialogclose");
+		})
 	}
 };
