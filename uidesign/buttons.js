@@ -14,5 +14,12 @@ bc.buttonsDesign= {
 		$(tpl).appendTo($page.parent()).popup({
 			trigger:$contextmenu
 		});
+	},
+	/**
+	 * 上下文为按钮所在窗口，第一个参数为选中的项({value:[value],text:[text]})
+	 * 
+	 */
+	selectMenuButtonItem: function(option){
+		logger.info("selectMenuButtonItem:option=" + $.toJSON(option));
 	}
 };

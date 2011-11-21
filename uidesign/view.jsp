@@ -25,12 +25,25 @@
 			<span class="ui-button-icon-primary ui-icon ui-icon-trash"></span><span
 				class="ui-button-text">删除</span>
 		</button>
-		<button id="contextmenu">正常</button>
-		<div id="jQueryUIRadio" style="display: inline-block;" class="bc-buttonGroup">
+		<button class="bc-button ui-button ui-widget ui-state-default ui-corner-all bc-menuButton ui-button-text-icon-secondary" 
+			type="button" data-change="bc.buttonsDesign.selectMenuButtonItem" data-menuSelector=".bc-page">
+			<span class="ui-button-text">操作</span>
+			<span class="ui-button-icon-secondary ui-icon ui-icon-triangle-1-s"></span>
+			<ul class="bc-menu ui-menu ui-widget ui-widget-content ui-corner-all ui-popup" 
+				style="min-width: 66px; position: absolute; display: none;">
+				<li data-text="操作1" data-value="v1"><a href="#">操作1</a></li>
+				<li data-text="操作2" data-value="v2"><a href="#">操作2</a></li>
+				<li data-text="操作3" data-value="v3" class="ui-menu-item"><a href="#">操作3</a></li>
+			</ul>
+		</button>
+		
+		<!-- <button id="contextmenu">正常</button> -->
+		
+		<!-- <div id="jQueryUIRadio" style="display: inline-block;" class="bc-buttonGroup">
 			<input type="radio" id="radio1" name="radio" /><label for="radio1">单选11</label><input 
 			type="radio" id="radio2" name="radio" checked="checked" /><label for="radio2">单选12</label><input 
 			type="radio" id="radio3" name="radio" /><label for="radio3">单选13</label>
-		</div>
+		</div> -->
 		
 		<div id="radioDesign" class="bc-radioGroup ui-buttonset" 
 			data-change="bc.viewDesign.changeRadio" data-key="status" data-action="reloadGrid">

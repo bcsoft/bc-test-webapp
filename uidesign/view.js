@@ -1,7 +1,7 @@
 bc.viewDesign= {
 	init : function() {
 		var $page = $(this);
-		$page.find("#jQueryUIRadio").buttonset();
+		//$page.find("#jQueryUIRadio").buttonset();
 		
 		//var tpl = '<div style="width:200px;height:200px;border:1px solid blue;background-color:red;position: absolute;">AAAA<div>';
 		var tpl = '<ul style="min-width:200px;">';
