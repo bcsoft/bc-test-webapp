@@ -26,7 +26,7 @@
 				class="ui-button-text">删除</span>
 		</button>
 		<button class="bc-button ui-button ui-widget ui-state-default ui-corner-all bc-menuButton ui-button-text-icon-secondary" 
-			type="button" data-change="bc.buttonsDesign.selectMenuButtonItem" data-menuSelector=".bc-page">
+			type="button" data-change="bc.viewDesign.selectMenuButtonItem" data-menuContainer=".bc-page">
 			<span class="ui-button-text">操作</span>
 			<span class="ui-button-icon-secondary ui-icon ui-icon-triangle-1-s"></span>
 			<ul class="bc-menu ui-menu ui-widget ui-widget-content ui-corner-all ui-popup" 

@@ -32,5 +32,12 @@ bc.viewDesign= {
 	},
 	changeRadio: function(option){
 		logger.info("option=" + $.toJSON(option));
+	},
+	/**
+	 * 上下文为按钮所在窗口，第一个参数为选中的项({value:[value],text:[text]})
+	 * 
+	 */
+	selectMenuButtonItem: function(option){
+		logger.info("selectMenuButtonItem:option=" + $.toJSON(option));
 	}
 };
