@@ -4,8 +4,13 @@
 <div title='工具条按钮设计' data-type='form' class="bc-page"
 	data-js='<s:url value="/bc-test/uidesign/buttons.js"/>,<s:url value="/bc-test/uidesign/buttons.css"/>'
 	data-initMethod='bc.buttonsDesign.init'
-	data-option='{width:800,height:400}' style="overflow: auto;">
+	data-option='{
+		width: 800,
+		height: 400,
+		buttons: [<s:property value="buttonOption1" escapeHtml="false"/>,<s:property value="buttonOption2" escapeHtml="false"/>]
+	}' style="overflow: auto;">
 	<div style="margin: 10px; padding: 10px; border-bottom: 1px solid #ccc;">
+		
 		<div class="">按钮:(jQueryUI)</div>
 		<div style="border:1px solid #ccc;" class="bc-toolbar ui-widget-content">
 			<button id="contextmenu">正常</button>
