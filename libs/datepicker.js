@@ -3,7 +3,7 @@ bc.datepickerTest = {
 		var $page = $(this);
 		//绑定验证测试按钮的事件
 		$page.find("#validate").click(function(){
-			 bc.validator.validate($page);
+			 logger.info(bc.validator.validate($page));
 		});
 	},
 	onSelectCallback : function(selectedDate) {
