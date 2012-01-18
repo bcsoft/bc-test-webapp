@@ -6,7 +6,7 @@
 	data-initMethod='bc.buttonsDesign.init'
 	data-option='{
 		width: 800,
-		height: 550,
+		height: 600,
 		buttons: [<s:property value="buttonOption1" escapeHtml="false"/>,<s:property value="buttonOption2" escapeHtml="false"/>]
 	}' style="overflow: auto;">
 	<div style="margin: 10px; padding: 10px; border-bottom: 1px solid #ccc;z-index: 9999999;">
@@ -25,15 +25,17 @@
 						<ul class="conditions" style="min-width:19.3em;">
 							<li class="condition first">
 								<div class="label">文本框</div>
-								<div class="value"><input type="text" class="ui-widget-content"></div>
+								<div class="value"><input type="text" class="ui-widget-content"
+									data-condition='{type:"string",ql:"name like ?"}'></div>
 							</li>
 							<li class="condition">
 								<div class="label">带选择和清空按钮的文本框</div>
 								<div class="value">
-									<input type="text" name="withSelectField1" class="ui-widget-content">
+									<input type="text" name="unitName" class="ui-widget-content">
+									<input type="hidden" name="unitId" data-condition='{type:"long",ql:"unitId=?"}'>
 									<ul class="inputIcons">
 										<li class="selectUnit inputIcon ui-icon ui-icon-plus"
-											data-cfg='withSelectField1=name'
+											data-cfg='unitName=name,unitId=id'
 											title='<s:text name="title.click2select"/>'></li>
 										<li class="clearSelect inputIcon ui-icon ui-icon-close" 
 											data-cfg='withSelectField1'
@@ -44,7 +46,8 @@
 							<li class="condition">
 								<div class="label">日期</div>
 								<div class="value">
-									<input type="text" name="dateField1" class="bc-date ui-widget-content" value="2011-01-31">
+									<input type="text" name="dateField1" class="bc-date ui-widget-content" value="2011-01-31"
+										data-condition='{type:"date",ql:"dateField1=?"}'>
 									<ul class="inputIcons">
 										<li class="selectCalendar inputIcon ui-icon ui-icon-calendar" data-cfg="dateField1"></li>
 										<li class="clearSelect inputIcon ui-icon ui-icon-close" 
@@ -57,7 +60,8 @@
 								<div class="label">日期范围</div>
 								<div class="value">
 									<div class="bc-dateContainer">
-										<input type="text" name="dateField21" class="bc-date ui-widget-content" value="2011-01-01" style="width:9em;">
+										<input type="text" name="dateField21" class="bc-date ui-widget-content" value="2011-01-01" 
+											data-condition='{type:"startDate",ql:"dateField2>=?"}' style="width:9em;">
 										<ul class="inputIcons">
 											<li class="selectCalendar inputIcon ui-icon ui-icon-calendar" data-cfg="dateField21"></li>
 											<li class="clearSelect inputIcon ui-icon ui-icon-close" 
@@ -65,7 +69,8 @@
 												title='<s:text name="title.click2clear"/>'></li>
 										</ul>
 									</div>～<div class="bc-dateContainer">
-										<input type="text" name="dateField22" class="bc-date ui-widget-content" value="2011-01-31" style="width:9em;">
+										<input type="text" name="dateField22" class="bc-date ui-widget-content" value="2011-01-31" 
+											data-condition='{type:"endDate",ql:"dateField2<=?"}'  style="width:9em;">
 										<ul class="inputIcons">
 											<li class="selectCalendar inputIcon ui-icon ui-icon-calendar" data-cfg="dateField22"></li>
 											<li class="clearSelect inputIcon ui-icon ui-icon-close" 
@@ -79,10 +84,13 @@
 							<li class="condition first">
 								<div class="label">下拉框(input)</div>
 								<div class="value">
-									<input type="text" name="selectField1" class="ui-widget-content">
+									<input type="text" name="selectField1" class="bc-select ui-widget-content"
+										data-source='[{value:"value1",text:"text1"},{value:"value2",text:"text2"}]' >
+									<input type="hidden" name="myId" data-condition='{type:"long",ql:"myId=?"}'>
 									<ul class="inputIcons">
-										<li class="selectUnit inputIcon ui-icon ui-icon-triangle-1-s"
-											title='<s:text name="title.click2select"/>'></li>
+										<li class="bc-select inputIcon ui-icon ui-icon-triangle-1-s"
+											title='<s:text name="title.click2select"/>'
+											data-cfg='selectField1'></li>
 										<li class="clearSelect inputIcon ui-icon ui-icon-close" 
 											data-cfg='selectField1'
 											title='<s:text name="title.click2clear"/>'></li>
@@ -92,7 +100,7 @@
 							<li class="condition first">
 								<div class="label">下拉框(select)</div>
 								<div class="value">
-									<select class="ui-widget-content">
+									<select class="ui-widget-content" data-condition='{type:"long",ql:"myId2=?"}'>
 										<option></option>
 										<option>选择1</option>
 										<option>选择1</option>
@@ -104,14 +112,14 @@
 							<li class="condition">
 								<div class="label">单选按钮</div>
 								<div class="value">
-									<label><input type="radio" class="radio" name="radioField1" value="1" checked="checked"><span>选项11</span></label>
-									<label><input type="radio" class="radio" name="radioField1" value="2"><span>选项12</span></label>
-									<label><input type="radio" class="radio" name="radioField1" value="3"><span>选项13</span></label>
+									<label><input type="radio" class="radio" name="radioField1" value="1" data-condition='{type:"long",ql:"status=?"}' checked="checked"><span>选项11</span></label>
+									<label><input type="radio" class="radio" name="radioField1" value="2" data-condition='{type:"long",ql:"status=?"}'><span>选项12</span></label>
+									<label><input type="radio" class="radio" name="radioField1" value="3" data-condition='{type:"long",ql:"status=?"}'><span>选项13</span></label>
 								</div>
 							</li>
 							<li class="condition">
 								<div class="label">多选按钮</div>
-								<div class="value">
+								<div class="value" data-condition='{type:"int",name:"status"}' >
 									<label><input type="checkbox" name="checkboxField1" value="1" checked="checked"><span>选项11</span></label>
 									<label><input type="checkbox" name="checkboxField1" value="2"><span>选项12</span></label>
 									<label><input type="checkbox" name="checkboxField1" value="3"><span>选项13</span></label>
