@@ -24,5 +24,8 @@ bc.buttonsDesign = {
 	},
 	clickTestButton : function() {
 		logger.info("clickTestButton");
+	},
+	doAdvanceSearch : function() {
+		logger.info("doAdvanceSearch");
 	}
 };

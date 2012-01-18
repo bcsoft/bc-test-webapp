@@ -55,7 +55,7 @@
 				<span class="ui-button-text">单选23</span>
 			</div>
 		</div>
-		<span class="bc-searchButton" data-action="search"><a href="#"
+		<span class="bc-searchButton" data-action="search"><a href="#" 
 			id="searchBtn" class="ui-icon ui-icon-search" title="点击执行查询"></a><input
 			type="text" id="searchText" class="ui-widget-content"> </span>
 	</div>
