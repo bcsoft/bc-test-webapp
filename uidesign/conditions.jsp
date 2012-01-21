@@ -60,13 +60,12 @@
 		<li class="condition first">
 			<div class="label">下拉框(input)</div>
 			<div class="value">
-				<input type="text" name="selectField1" class="bc-select ui-widget-content" readonly="readonly"
+				<input type="text" class="bc-select ui-widget-content" readonly="readonly"
 					data-source='[{"value":"","label":"&nbsp;"},{"value":"value1","label":"text1"},{"value":"value2","label":"text2"}]' >
-				<input type="hidden" name="myId" data-condition='{"type":"long","ql":"myId=?"}'>
+				<input type="hidden" data-condition='{"type":"long","ql":"myId=?"}'>
 				<ul class="inputIcons">
 					<li class="bc-select inputIcon ui-icon ui-icon-triangle-1-s"
-						title='<s:text name="title.click2select"/>'
-						data-cfg='selectField1'></li>
+						title='<s:text name="title.click2select"/>'></li>
 					<li class="clearSelect inputIcon ui-icon ui-icon-close" title='<s:text name="title.click2clear"/>'></li>
 				</ul>
 			</div>
