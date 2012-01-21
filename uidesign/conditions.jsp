@@ -41,6 +41,7 @@
 			<div class="value">
 				<div class="bc-dateContainer">
 					<input type="text" class="bc-date ui-widget-content" data-validate="date" value="2011-01-01" style="width:9em;"
+						data-cfg='{"addYear": 5}'
 						data-condition='{"type":"startDate","ql":"dateField2>=?"}'>
 					<ul class="inputIcons">
 						<li class="selectCalendar inputIcon ui-icon ui-icon-calendar"></li>
