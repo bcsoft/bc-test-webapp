@@ -3,7 +3,7 @@
 <div title='动态曲线图'' 
 	class="bc-page chart" style="overflow: auto;"
 	data-type='chart' 
-	data-js='<s:url value="/ui-libs/highcharts/2.1.8/highcharts.min.js?ts=0" />,<s:url value="/bc-test/chart/spline.js" />'
+	data-js='js:highcharts,<s:url value="/bc-test/chart/spline.js" />'
 	data-initMethod='bc.splineDemo.init'
 	data-option='{"width":600,"height":350}'>
 <div class="chartContainer" style="height:100%;width:100%;"></div>

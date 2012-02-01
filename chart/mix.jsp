@@ -3,7 +3,7 @@
 <div title='混合图表'' 
 	class="bc-page chart" style="overflow: auto;"
 	data-type='chart' 
-	data-js='<s:url value="/ui-libs/highcharts/2.1.8/highcharts.min.js?ts=0" />,<s:url value="/ui-libs/highcharts/2.1.8/modules/exporting.min.js?ts=0" />,<s:url value="/bc-test/chart/mix.js" />'
+	data-js='js:highcharts,js:highcharts_exporting,<s:url value="/bc-test/chart/mix.js" />'
 	data-initMethod='bc.mixChartDemo.init'
 	data-option='{"width":600,"height":350}'>
 <div class="chartContainer" style="height:100%;width:100%;"></div>
