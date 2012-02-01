@@ -3,7 +3,7 @@
 <div title='柱图演示'' 
 	class="bc-page chart" style="overflow: auto;"
 	data-type='chart' 
-	data-js='<s:url value="/ui-libs/highcharts/2.1.4/highcharts.min.js?ts=0" />,<s:url value="/ui-libs/highcharts/2.1.4/modules/exporting.min.js?ts=0" />,<s:url value="/bc-test/chart/bar.js" />'
+	data-js='<s:url value="/ui-libs/highcharts/2.1.8/highcharts.min.js?ts=0" />,<s:url value="/ui-libs/highcharts/2.1.8/modules/exporting.min.js?ts=0" />,<s:url value="/bc-test/chart/bar.js" />'
 	data-initMethod='bc.barDemo.init'
 	data-option='{"width":500,"height":300}'>
 <div class="chartContainer" style="height:100%;width:100%;"></div>
