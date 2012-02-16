@@ -37,7 +37,7 @@
 			</div>
 		</li>
 		<li class="condition">
-			<div class="label">日期范围</div>
+			<div class="label">日期范围(简单控制)</div>
 			<div class="value">
 				<div class="bc-dateContainer">
 					<input type="text" class="bc-date ui-widget-content" data-validate="date" value="2011-01-01" style="width:9em;"
@@ -50,6 +50,36 @@
 				</div>～<div class="bc-dateContainer">
 					<input type="text" class="bc-date ui-widget-content" data-validate="date" value="2011-01-31" style="width:9em;"
 						data-condition='{"type":"endDate","ql":"dateField2<=?"}'>
+					<ul class="inputIcons">
+						<li class="selectCalendar inputIcon ui-icon ui-icon-calendar"></li>
+						<li class="clearSelect inputIcon ui-icon ui-icon-close" title='<s:text name="title.click2clear"/>'></li>
+					</ul>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</li>
+		<li class="condition">
+			<div class="label">日期范围(混合控制）</div>
+			<div class="value multi"
+				data-condition='{
+					"type": "multi",
+					"ql": "(df31>=?0 and df32<=?1)",
+					"ql10": "df31>=?",
+					"ql01": "df32<=?"
+				}'>
+				<div class="bc-dateContainer">
+					<input id="startDate" type="text" class="bc-date ui-widget-content value" 
+						data-validate="date" value="2011-01-01" style="width:9em;"
+						data-value="startDate"
+						data-cfg='{"addYear": 5}'>
+					<ul class="inputIcons">
+						<li class="selectCalendar inputIcon ui-icon ui-icon-calendar"></li>
+						<li class="clearSelect inputIcon ui-icon ui-icon-close" title='<s:text name="title.click2clear"/>'></li>
+					</ul>
+				</div>～<div class="bc-dateContainer">
+					<input id="endDate"  type="text" class="bc-date ui-widget-content value" 
+						data-validate="date" value="2011-01-31" style="width:9em;"
+						data-value="endDate">
 					<ul class="inputIcons">
 						<li class="selectCalendar inputIcon ui-icon ui-icon-calendar"></li>
 						<li class="clearSelect inputIcon ui-icon ui-icon-close" title='<s:text name="title.click2clear"/>'></li>
@@ -85,7 +115,7 @@
 		</li>
 		<li class="condition">
 			<div class="label">单选按钮</div>
-			<div class="value" data-condition='{"type":"long","ql":"status=?"}'>
+			<div class="value radios" data-condition='{"type":"long","ql":"status=?"}'>
 				<label><input type="radio" class="radio" name="radioField1" value="11"><span>选项11</span></label>
 				<label><input type="radio" class="radio" name="radioField1" value="12"><span>选项12</span></label>
 				<label><input type="radio" class="radio" name="radioField1" value="13"><span>选项13</span></label>
@@ -93,11 +123,18 @@
 		</li>
 		<li class="condition">
 			<div class="label">多选按钮</div>
-			<div class="value" data-condition='{"type":"int","key":"status"}' >
+			<div class="value checkboxes" data-condition='{"type":"int","key":"status"}' >
 				<label><input type="checkbox" name="checkboxField1" value="21"><span>选项21</span></label>
 				<label><input type="checkbox" name="checkboxField1" value="22"><span>选项22</span></label>
 				<label><input type="checkbox" name="checkboxField1" value="23"><span>选项23</span></label>
 			</div>
 		</li>
 	</ul>
+	<div class="operate">
+		<button type="button" id="doSearchBtn" class="bc-button ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary"
+			data-click="bc.toolbar.doAdvanceSearch">
+			<span class="ui-button-icon-primary ui-icon ui-icon-search"></span>
+			<span class="ui-button-text">查询</span>
+		</button>
+	</div>
 </form>
