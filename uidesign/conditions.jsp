@@ -68,7 +68,7 @@
 					"ql01": "df32<=?"
 				}'>
 				<div class="bc-dateContainer">
-					<input id="startDate" type="text" class="bc-date ui-widget-content value" 
+					<input type="text" class="bc-date ui-widget-content value" 
 						data-validate="date" value="2011-01-01" style="width:9em;"
 						data-value="startDate"
 						data-cfg='{"addYear": 5}'>
@@ -77,7 +77,7 @@
 						<li class="clearSelect inputIcon ui-icon ui-icon-close" title='<s:text name="title.click2clear"/>'></li>
 					</ul>
 				</div>～<div class="bc-dateContainer">
-					<input id="endDate"  type="text" class="bc-date ui-widget-content value" 
+					<input type="text" class="bc-date ui-widget-content value" 
 						data-validate="date" value="2011-01-31" style="width:9em;"
 						data-value="endDate">
 					<ul class="inputIcons">
