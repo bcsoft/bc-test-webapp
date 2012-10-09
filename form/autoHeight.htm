@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>taskbar</title>
+<script type="text/javascript" src="../../ui-libs/jquery/1.7.2/jquery.min.js"></script>
+<style type="text/css">
+html,body {
+	margin: 0px;
+	padding: 0px;
+	height: 100%;
+	overflow: auto;
+	background-color: #666;
+}
+.borderBox {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+/*只能读*/
+.readonly {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 100%;
+	min-height: 1.6em;
+	-webkit-user-modify: read-only;
+	-moz-user-modify: read-only;
+	user-modify: read-only;
+}
+/*可读可写*/
+.editable {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 100%;
+	min-height: 1.6em;
+	-webkit-user-modify: read-write-plaintext-only;
+	-moz-user-modify: read-write;
+	-moz-user-modify: read-write-plaintext-only;/*firefox15 unsupport*/
+	user-modify: read-write-plaintext-only;
+}
+.richeditable {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 100%;
+	min-height: 1.6em;
+	-webkit-user-modify: read-write;
+	-moz-user-modify: read-write;
+	user-modify: read-write;
+}
+textarea.autoHeight {
+	overflow: hidden;
+	resize: none;
+	background-color: transparent;
+	min-height: 2em;
+	max-height: 100px;
+	height: auto;
+}
+</style>
+</head>
+<body>
+<div style="width:200px;margin:10px;">
+	<div contenteditable="true" class="box editable" style="border:1px solid gray;padding:4px;" placeholder="placeholder"></div>
+	<textarea class="borderBox autoHeight" style="border:1px solid gray;margin-top:10px;padding:4px;" placeholder="placeholder">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbccccccccccccccccccccccc</textarea>
+</div>
+<script type="text/javascript">
+jQuery(function($) {
+	//自动内容高度
+	$(document).delegate(".autoHeight",{
+		keyup: function() {
+			var $this = $(this);
+			$this.height(0).css("overflow", "hidden");
+			var maxHeight = parseInt($this.css("max-height"));
+			var h;
+			if(maxHeight){
+				if(maxHeight < this.scrollHeight){
+					h = maxHeight;
+					$this.css("overflow", "auto");
+				}else{
+					h = this.scrollHeight;
+				}
+			}else{
+				h = this.scrollHeight;
+			}
+			$this.height(h + ($.browser.mozilla ? 10 : 2));
+		}
+	});
+	$("textarea.autoHeight").keyup();
+});
+</script>
+</body>
+</html>
