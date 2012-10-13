@@ -1,0 +1,90 @@
+/* 节点集*/
+.nodes {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+	cursor: default;
+}
+.nodes .nav {
+	visibility: visible;
+	-moz-transition	: all 0.5s ease-out 0.1s;
+	-webkit-transition	: all 0.5s ease-out 0.1s;
+}
+.nodes:hover .nav {
+	visibility: visible;
+}
+/* 节点*/
+.nodes>.node {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+	min-height:1px;
+}
+.nodes>.node>div {
+	overflow: hidden;
+	background-color: rgba(10,50,50,.5);
+	margin: 0px;
+	padding: 0px;
+	white-space:nowrap;
+	height: 2em;
+	line-height: 2em;
+	position: relative;
+}
+
+/* 节点的鼠标悬停状态*/
+.nodes>.node>div:hover {
+	background-color: #f8f8f8;
+	font-weight: bold;
+}
+.nodes>.node>div>* {
+	margin: 0px;
+	padding: 0px;
+	overflow: hidden;
+	display: inline-block;
+	height: 100%;
+	position: relative;
+}
+/* 节点的折叠展开图标*/
+.nodes>.node>div>.nav {
+	width: 1em;
+	text-align: center;
+	color: red;
+	background-color: rgba(50,50,50,.5);
+}
+/* 节点的描述图标*/
+.nodes>.node>div>.icon {
+	width: 1em;
+	text-align: center;
+	color: blue;
+}
+.nodes>.node>div>.icon>span {
+	width: 16px;
+	height: 16px;
+	background: url(tree.png) -48px -16px no-repeat;
+	text-indent: -1000px;
+	display: block;
+	position: absolute;
+	top: 50%;
+	margin-top: -8px;
+}
+/* 节点的显示文字*/
+.nodes>.node>div>.text {
+	color: #000;
+	background-color: #rgba(80,80,80,.5);
+}
+/* 节点的子节点集*/
+.nodes>.node>.nodes>.node>div {
+	padding-left: 1em;
+}
+.nodes>.node>.nodes>.node>.nodes>.node>div {
+	padding-left: 2em;
+}
+
+/* 节点的折叠状态*/
+.nodes>.node.folded>.nodes {
+	display: none;
+}
+/* 节点的展开状态*/
+.nodes>.node.unfolded>.nodes {
+	display: block;
+}
