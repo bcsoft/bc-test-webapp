@@ -6,7 +6,7 @@
 	cursor: default;
 }
 .nodes .nav {
-	visibility: visible;
+	visibility: hidden;
 	-moz-transition	: all 0.5s ease-out 0.1s;
 	-webkit-transition	: all 0.5s ease-out 0.1s;
 }
@@ -37,6 +37,7 @@
 	font-weight: bold;
 }
 .nodes>.node>div>* {
+	clear: both;
 	margin: 0px;
 	padding: 0px;
 	overflow: hidden;
@@ -49,7 +50,7 @@
 	width: 1em;
 	text-align: center;
 	color: red;
-	background-color: rgba(50,50,50,.5);
+	/*background-color: rgba(50,50,50,.5);*/
 }
 /* 节点的描述图标*/
 .nodes>.node>div>.icon {
@@ -57,16 +58,29 @@
 	text-align: center;
 	color: blue;
 }
-.nodes>.node>div>.icon>span {
+.nodes>.node>div>.icon>span,.nodes>.node>div>.nav>span {
 	width: 16px;
 	height: 16px;
-	background: url(tree.png) -48px -16px no-repeat;
+	background: url(tree.png) -48px -144px no-repeat;
 	text-indent: -1000px;
-	display: block;
-	position: absolute;
-	top: 50%;
-	margin-top: -8px;
+	display: inline-block;
 }
+.nodes>.node.unfolded>div>.nav>span {
+	background-position: -48px -16px;
+}
+.nodes>.node.folded>div>.nav>span {
+	background-position: -32px -16px;
+}
+.nodes>.node.unfolded>div>.icon>span {
+	background-position: -16px -96px;
+}
+.nodes>.node.folded>div>.icon>span {
+	background-position: 0 -96px;
+}
+.nodes>.node>div>.icon>span.i01 {
+	background-position: 0 -144px;
+}
+
 /* 节点的显示文字*/
 .nodes>.node>div>.text {
 	color: #000;
