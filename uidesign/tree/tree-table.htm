@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Tree</title>
+<link type="text/css" rel="stylesheet" href="tree-table.css" />
+<link rel="stylesheet" type="text/css" href="../../../bc/libs/themes/default/core.css" />	
+<link rel="stylesheet" type="text/css" href="../../../ui-libs/jquery-ui/1.9pre/themes/base/jquery-ui.css" />	
+<link rel="stylesheet" type="text/css" href="../../../ui-libs/jquery-ui/1.8.16/themes/smoothness/jquery-ui.css" />
+<style type="text/css">
+html,body {
+	margin: 0px;
+	padding: 0px;
+	height: 100%;
+	overflow: auto;
+	background-color: #d7e5c8;
+}
+.bc-tree{
+	margin: 2em;
+	float: left;
+	width: 15em;
+	height: 20em;
+}
+.text11{
+	/*word-wrap: normal;		 normal | break-word*/
+	/*word-break: keep-all;	 normal | break-all | keep-all*/
+	white-space: nowrap;	/* normal | nowrap | keep-all*/
+	text-overflow: ellipsis;
+}
+</style>
+</head>
+<body>
+<div class="bc-tree ui-widget-content unselectable autoHideShowNav">
+	<table class="nodes">
+		<tbody>
+		<tr>
+			<td class="node folder collapsed"><div class="item ui-widget-content ui-state-normal ui-corner-all"><span class="nav ui-icon ui-icon-triangle-1-e"></span><span class="type ui-icon ui-icon-document"></span><span class="text">Text</span></div></td>
+		</tr>
+		<tr>
+			<td class="node folder open"><div class="item ui-widget-content ui-state-normal ui-corner-all"><span class="nav ui-icon ui-icon-triangle-1-e"></span><span class="type ui-icon ui-icon-document"></span><span class="text">导航图标自动显示 长文本长文本</span></div></td>
+		</tr>
+		<tr>
+			<td class="node leaf"><div class="item ui-widget-content ui-state-normal ui-corner-all"><span class="nav ui-icon"></span><span class="type ui-icon ui-icon-document"></span><span class="text">Text</span></div></td>
+		</tr>
+		</tbody>
+	</table>
+</div> 
+<div class="bc-tree ui-widget-content unselectable">
+	<table class="nodes">
+		<tbody>
+		<tr>
+			<td class="node folder open"><div class="item ui-widget-content ui-state-normal ui-corner-all"><span class="nav ui-icon ui-icon-triangle-1-se"></span><span class="type ui-icon ui-icon-folder-open"></span><span 
+				class="text">父节点(展开状态)</span></div><table class="nodes level1">
+					<tbody>
+					<tr>
+						<td class="node leaf"><div class="item ui-widget-content ui-state-normal ui-corner-all"><span class="nav ui-icon"></span><span class="type ui-icon ui-icon-document"></span><span class="text">叶子节点</span></div></td>
+					</tr>
+					<tr>
+						<td class="node leaf"><div class="item ui-widget-content ui-state-normal ui-corner-all"><span class="nav ui-icon"></span><span class="type ui-icon ui-icon-document"></span><span class="text">叶子节点</span></div></td>
+					</tr>
+					<tr>
+						<td class="node leaf"><div class="item ui-widget-content ui-state-normal ui-corner-all"><span class="nav ui-icon"></span><span class="type ui-icon ui-icon-document"></span><span class="text">叶子节点</span></div></td>
+					</tr>
+					</tbody>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td class="node folder collapsed"><div class="item ui-widget-content ui-state-normal ui-corner-all"><span class="nav ui-icon ui-icon-triangle-1-e"></span><span class="type ui-icon ui-icon-folder-collapsed"></span><span class="text">父节点(折叠状态)</span></div></td>
+		</tr>
+		<tr>
+			<td class="node leaf"><div class="item ui-widget-content ui-state-normal ui-corner-all"><span class="nav ui-icon"></span><span class="type ui-icon ui-icon-document"></span><span class="text">叶子节点</span></div></td>
+		</tr>
+		</tbody>
+	</table>
+</div>
+
+<script type="text/javascript" src="../../../ui-libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="tree-table.js"></script>
+</body>
+</html>

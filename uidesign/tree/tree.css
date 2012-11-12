@@ -19,6 +19,8 @@
 	margin: 0px;
 	padding: 0px;
 	min-height:1px;
+	white-space: nowrap;
+	background-color: blue;
 }
 .nodes>.node>div {
 	overflow: hidden;
@@ -29,10 +31,11 @@
 	height: 2em;
 	line-height: 2em;
 	position: relative;
+	display: inline-block;
 }
 
 /* 节点的鼠标悬停状态*/
-.nodes>.node>div:hover {
+.nodes>.node:hover {
 	background-color: #f8f8f8;
 	font-weight: bold;
 }

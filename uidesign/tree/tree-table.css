@@ -1,0 +1,95 @@
+/**
+ * 树的样式配置文件
+ * 
+ * @author rongjihuang@gmail.com
+ * @date 2012-11-12
+ * @comment 使用table作为节点的容器，通过表格行的背景控制鼠标悬停的整行样式显示，类似win7的资源管理器树
+ */
+
+/* 容器 */
+.bc-tree {
+	overflow: auto;
+	margin: 0px;
+	padding: 0px;
+	cursor: default;
+	box-sizing: border-box;
+	padding:8px 1px;
+}
+/* 节点集 */
+.bc-tree table.nodes {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+	cursor: default;
+	border-spacing: 0;
+	border: none;
+	width: 100%;
+}
+
+/* 节点 */
+.bc-tree td.node {
+	padding:0;
+	vertical-align: middle;
+}
+.bc-tree td.node>.item {
+	height:100%;
+	white-space: nowrap; /* normal | nowrap | keep-all*/
+}
+.bc-tree td.node>.item.ui-state-normal {
+	border-color: transparent;
+}
+/* 节点：内容 */
+.bc-tree td.node>.item>span {
+	display: inline-block;
+}
+/* 节点：叶子-无导航图标 */
+.bc-tree td.node.leaf>.item>span.nav {
+	background-image: none;
+	visibility: hidden;
+}
+/* 节点：导航图标--默认隐藏 */
+.bc-tree.autoHideShowNav td.node>.item>span.nav {
+	visibility: hidden;
+	-moz-transition	: visibility 0.5s ease-out 0.1s;
+	-webkit-transition	: visibility 0.5s ease-out 0.2s;
+}
+/* 节点：导航图标--鼠标悬停时显示 */
+.bc-tree.autoHideShowNav:hover td.node>.item>span.nav {
+	visibility: visible;
+}
+
+/* 节点的子节点可见性控制 */
+.bc-tree td.node.collapsed>table.nodes {
+	display: none;
+}
+
+/* 节点的嵌套层次结构样式控制 */
+.bc-tree table.nodes.level1>tbody>tr>td.node>.item {
+	padding-left: 16px;
+}
+.bc-tree table.nodes.level2>tbody>tr>td.node>.item {
+	padding-left: 32px;
+}
+.bc-tree table.nodes.level3>tbody>tr>td.node>.item {
+	padding-left: 48px;
+}
+.bc-tree table.nodes.level4>tbody>tr>td.node>.item {
+	padding-left: 64px;
+}
+.bc-tree table.nodes.level5>tbody>tr>td.node>.item {
+	padding-left: 80px;
+}
+.bc-tree table.nodes.level6>tbody>tr>td.node>.item {
+	padding-left: 96px;
+}
+.bc-tree table.nodes.level7>tbody>tr>td.node>.item {
+	padding-left: 112px;
+}
+.bc-tree table.nodes.level8>tbody>tr>td.node>.item {
+	padding-left: 128px;
+}
+.bc-tree table.nodes.level9>tbody>tr>td.node>.item {
+	padding-left: 144px;
+}
+
+/* jqueryUI样式复写 */
