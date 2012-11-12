@@ -1,0 +1,52 @@
+/* 控制打印背景颜色和图片 
+ * https://chrome.google.com/webstore/detail/print-background-colors/gjecpgdgnlanljjdacjdeadjkocnnamk?utm_source=gmail
+ **/
+:root {
+	-webkit-print-color-adjust: exact;
+}
+
+/* 页面布局 http://www.w3.org/TR/css3-page/  http://www.tutorialspoint.com/css/css_paged_media.htm **/
+@page { /* 纸张设置：（默认值为auto） 
+	 * 指定方向 size: portrait(纵向)|landscape(横向)   
+	 * 指定大小 size: 8.5in 11in|A4 landscape  
+	 **/
+	size: 210mm 80mm;
+	/* 纸张设置：   
+	 * 指定方向 size: portrait(纵向)|landscape(横向)   
+	 * 指定大小 size: 8.5in 11in|A4 landscape  
+	 * 指定页边距 margin: 2mm|15mm 10mm 0 5mm|15mm 10mm   
+	 **/
+	margin: 0;
+}
+
+.zero {
+	margin: 0;
+	padding: 0;
+}
+
+body>:first-child {
+	page-break-before: avoid;
+}
+
+h1 {
+	page-break-before: right;
+	margin:0;padding:0;
+}
+
+h2 {
+	page-break-after: avoid;
+	margin:0;padding:0;
+}
+
+/* */
+p { page-break-inside : avoid; }
+
+/* 
+	page-break-before|page-break-after: auto|always|avoid|left|right; 
+	page-break-inside: auto|avoid; 
+table { page-break-inside:auto;page-break-before: always;}
+   tr { page-break-inside:avoid; page-break-after:auto;page-break-before: always;}
+   td { page-break-inside:avoid; page-break-after:auto }
+   thead { display:table-header-group }
+   tfoot { display:table-footer-group }
+ */

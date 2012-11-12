@@ -1,0 +1,29 @@
+.font {
+	font-family: "Microsoft YaHei", sans-serif;
+	font-size: 1em;
+}
+
+/* 设置背景颜色为灰色 **/
+body {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background-color: #fff;
+}
+body>*{
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+h1 {
+	color: red;
+}
+
+table td{
+	border: 1px solid black;
+}
+
+tr>:first-child {
+	width: 80px;
+}
