@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Grid2</title>
+<link type="text/css" rel="stylesheet" href="tree-table.css" />
+<link rel="stylesheet" type="text/css"
+	href="../../../bc/libs/themes/default/core.css" />
+<link rel="stylesheet" type="text/css"
+	href="../../../ui-libs/jquery-ui/1.9pre/themes/base/jquery-ui.css" />
+<link rel="stylesheet" type="text/css"
+	href="../../../ui-libs/jquery-ui/1.8.16/themes/smoothness/jquery-ui.css" />
+<style type="text/css">
+html,body {
+	margin: 0px;
+	padding: 0px;
+	height: 100%;
+	overflow: auto;
+	background-color: #d7e5c8;
+}
+
+.bc-grid2 {
+	margin: 2em;
+	/*width: 15em;*/
+	height: 10em;
+	position: relative;
+	border-width: 0;
+	overflow: auto;
+}
+
+.text11 { /*word-wrap: normal;		 normal | break-word*/
+	/*word-break: keep-all;	 normal | break-all | keep-all*/
+	white-space: nowrap; /* normal | nowrap | keep-all*/
+	text-overflow: ellipsis;
+}
+
+table {
+	display: table;
+	border-collapse: separate;
+	position: relative;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	-ms-user-select: none;
+	border-spacing: 0;
+	margin: 0;
+	border-width: 0;
+	table-layout: fixed;
+	width: 0;
+	box-sizing: content-box; -webkit-box-sizing : content-box;
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+}
+
+table td,table th {
+	border: 1px solid gray;
+	overflow: hidden;/**/
+	text-overflow: ellipsis; /*clip|ellipsis|string*/
+	
+	/* 自动换行 */
+	word-wrap: break-word;
+	word-break: break-all;
+}
+
+table thead {
+	/*position: fixed;*/
+}
+</style>
+</head>
+<body>
+	<div class="bc-grid2 ui-widget-content">
+		<table class="htCore"
+			style="display: table; border-collapse: collapse;">
+			<colgroup>
+				<col style="width: 50px;">
+				<col style="width: 50px;">
+				<col style="width: 50px;">
+				<col style="width: 50px;">
+				<col style="width: 50px;">
+				<col style="width: 50px;">
+			</colgroup>
+			<thead>
+				<tr>
+					<th><div class="relative">
+							<span class="colHeader">A</span>
+						</div></th>
+					<th><div class="relative">
+							<span class="colHeader">B</span>
+						</div></th>
+					<th><div class="relative">
+							<span class="colHeader">C</span>
+						</div></th>
+					<th><div class="relative">
+							<span class="colHeader">D</span>
+						</div></th>
+					<th><div class="relative">
+							<span class="colHeader">E</span>
+						</div></th>
+					<th><div class="relative">
+							<span class="colHeader">F</span>
+						</div></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class=""></td>
+					<td class="">Maserati123456</td>
+					<td class="">Mazda</td>
+					<td class="">Mercedes</td>
+					<td class="">Mini</td>
+					<td class="">Mitsubishi</td>
+				</tr>
+				<tr>
+					<td class="">2009</td>
+					<td class="">0</td>
+					<td class="">2941</td>
+					<td class="">4303</td>
+					<td class="">354</td>
+					<td class="">5814</td>
+				</tr>
+				<tr>
+					<td class="">2010</td>
+					<td class="">5</td>
+					<td class="">2905</td>
+					<td class="">2867</td>
+					<td class="">412</td>
+					<td class="">5284</td>
+				</tr>
+				<tr>
+					<td class="">2011</td>
+					<td class="">4</td>
+					<td class="">2517</td>
+					<td class="">2867</td>
+					<td class="">552</td>
+					<td class="">6127</td>
+				</tr>
+				<tr>
+					<td class="">2012</td>
+					<td class="">2</td>
+					<td class="">2422</td>
+					<td class="">2867</td>
+					<td class="">776</td>
+					<td class="">4151</td>
+				</tr>
+				<tr>
+					<td class=""></td>
+					<td class=""></td>
+					<td class=""></td>
+					<td class=""></td>
+					<td class=""></td>
+					<td class=""></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<script type="text/javascript"
+		src="../../../ui-libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript"
+		src="../../../ui-libs/jquery/plugins/json/2.2/jquery.json.min.js"></script>
+	<script type="text/javascript" src="grid2.js"></script>
+</body>
+</html>
