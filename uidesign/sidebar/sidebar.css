@@ -1,0 +1,132 @@
+/**
+ * 边栏样式
+ * @author rongjihuang@gmail.com
+ * @date 2013-03-20
+ **/
+
+/* 容器  */
+.sidebar {
+	box-sizing: border-box;
+	position: relative;
+	overflow: auto;
+	margin: 0px;
+	padding: 0px;
+	cursor: default;
+}
+
+.sidebar .label:hover {
+	text-decoration: underline;
+}
+
+/* 通知中心  */
+.sidebar>.header {
+	border-width: 0;
+	padding: 0.4em;
+}
+
+.sidebar>.header>.label {
+	font-size: 125%;
+	padding-bottom: 0.2em;
+}
+
+.sidebar>.header>.search {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+}
+
+.sidebar>.header>.search>.ui-icon {
+	position: absolute;
+	top: 50%;
+	margin-top: -0.6em;
+	margin-left: 2px;
+}
+
+.sidebar>.header>.search>input {
+	height: 1.8em;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	padding: 0.2em 1.4em 0.2em 1.4em;
+	width: 100%;
+}
+
+.sidebar>.spliter {
+	box-sizing: border-box;
+	height: .4em;
+	cursor: s-resize;
+	background-color: #eee;
+}
+
+/* 信息分组  */
+.sidebar>.group {
+	font-size: 100%;
+}
+
+.sidebar>.group>.scrollContainer {
+	overflow-x: hidden;
+	overflow-y: auto;
+	max-height: 8em;
+	border-width: 0;
+}
+
+.sidebar>.group table {
+	border-spacing: 0;
+	border-collapse: collapse;
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+}
+
+.sidebar>.group>.header {
+	border-width: 0;
+	padding: 0.4em;
+}
+
+.sidebar>.group .bottomline {
+	border-bottom: 1px solid #ccc;
+	border-bottom-style: solid;
+}
+
+.sidebar>.group .row {
+	cursor: pointer;
+}
+
+.sidebar>.group .row:hover {
+	font-weight: bold;
+}
+
+.sidebar>.group .row .icon {
+	vertical-align: top;
+	width: 18px;
+}
+
+.sidebar>.group .row .time {
+	vertical-align: right;
+	white-space: nowrap; /* 加上这个才能让中文也显示省略号，否则中文会自动换行 */
+	text-overflow: ellipsis;
+	overflow: hidden;
+	width: 4.5em;
+	opacity: .9;
+	font-size: 80%;
+}
+
+.sidebar>.group .row .label {
+	text-align: left;
+	white-space: nowrap; /* 加上这个才能让中文也显示省略号，否则中文会自动换行 */
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.sidebar>.group .row .detail {
+	text-align: left;
+	opacity: .9;
+	max-height: 3em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	word-wrap: break-word;
+	word-break: break-all;
+	margin: 0;
+	padding: 0;
+	font: inherit;
+	white-space: pre-wrap;
+}

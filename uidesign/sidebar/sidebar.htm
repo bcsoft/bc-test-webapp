@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Sidebar</title>
+<link rel="stylesheet" type="text/css" href="../../../bc/libs/themes/default/core.css" />
+<link rel="stylesheet" type="text/css" href="../../../ui-libs/jquery-ui/1.9pre/themes/base/jquery-ui.css" />
+<link rel="stylesheet" type="text/css" href="../../../ui-libs/jquery-ui/1.8.16/themes/smoothness/jquery-ui.css" />
+<link rel="stylesheet" type="text/css" href="../../../bc/libs/themes/default/desktop.css" />
+<link type="text/css" rel="stylesheet" href="./sidebar.css" />
+<style type="text/css">
+</style>
+</head>
+<body style='font-size:13px;' class="bc">
+<!-- 整个桌面 -->
+<div id="desktop" class="bc-desktop">
+<!-- 系统菜单条 -->
+<div id="top" class="ui-widget-header unselectable" unselectable="on"></div>
+<div id="middle" class="ui-widget-content">
+<!-- 桌面区域 -->
+<div id="center" class="bc-shortcuts unselectable" unselectable="on"></div>
+
+<!-- 右边栏 -->
+<div id="right" class="ui-widget-content unselectable sidebar" unselectable="on"">
+	<!-- 大标题 -->
+	<div class="header ui-widget-header">
+		<div class="label">通知中心</div>
+		<div class="search"><a href="#"
+			class="ui-icon ui-icon-search" title="点击执行查询"></a><input
+			type="text" class="ui-widget-content" placeholder="搜索">
+		</div>
+	</div>
+	<div class="spliter"></div>
+	<div class="group">
+		<table class="header ui-widget-header" cellpadding="0">
+			<colgroup>
+				<col style="width: 20px;">
+				<col style="text-align: left;">
+				<col style="width: 20px;">
+			</colgroup>
+			<tbody>
+				<tr>
+					<td><span class="ui-icon ui-icon-calendar"></span></td>
+					<td style="text-align: left;height:1.4em">待办</td>
+					<td><span class="ui-icon ui-icon-close"></span></td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="scrollContainer ui-widget-content">
+			<table cellpadding="0">
+				<tbody>
+					<tr class="row header">
+						<td class="icon bottomline" rowspan="2"><span class="ui-icon ui-icon-radio-on"></span></td>
+						<td class="label" >车队长核查处理车队长核查处理车队长核查处理</td>
+						<td class="time">40分钟前</td>
+					</tr>
+					<tr class="row detail">
+						<td class="bottomline" colspan="2"><pre class="detail">关于进一步加强禁毒宣传教育的指示说明，关于进一步加强禁毒宣传教育的指示说明关于进一，关于进一步加强禁毒宣传教育的指示说明关于进一，关于进一步加强禁毒宣传教育的指示说明关于进一，关于进一步加强禁毒宣传教育的指示说明关于进一</pre></td>
+					</tr>
+					<tr class="row header">
+						<td class="icon bottomline" rowspan="2"><span class="ui-icon ui-icon-radio-on"></span></td>
+						<td class="label" >车队长核查处理</td>
+						<td class="time">4分钟前</td>
+					</tr>
+					<tr class="row detail">
+						<td class="bottomline" colspan="2"><pre class="detail">关于进一步加强禁毒宣传教育</pre></td>
+					</tr>
+					<tr class="row header">
+						<td class="icon bottomline" rowspan="2"><span class="ui-icon ui-icon-radio-on"></span></td>
+						<td class="label bottomline">车队长核查处理</td>
+						<td class="time bottomline">4分钟前</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+</div>
+<!-- 任务条 -->
+<div id="bottom" class="ui-widget-header"></div>
+</div>
+	<script type="text/javascript" src="../../../ui-libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../../../ui-libs/jquery/plugins/json/2.2/jquery.json.min.js"></script>
+	<script type="text/javascript" src="./sidebar.js"></script>
+</body>
+</html>
