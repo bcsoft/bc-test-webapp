@@ -56,37 +56,31 @@
 	width: 100%;
 }
 
-.sidebar>.spliter {
-	box-sizing: border-box;
-	height: .4em;
-	cursor: s-resize;
-	background-color: #eee;
-}
-
 /* 单行固定高度3列布局通用样式  */
-.sidebar>.group .row {
+.sidebar .group .row {
 	position: relative;
 	border-width: 0;
 	padding: 0;
 	height: 1.6em;
 }
 
-.sidebar>.group .row>.icon {
+.sidebar .group .row>.icon {
 	position: absolute;
 	left: 0;
 	top: 50%;
 	margin-top: -8px;
 }
 
-.sidebar>.group .row>.btn {
+.sidebar .group .row>.btn {
 	position: absolute;
 	right: 0;
 	top: 50%;
 	margin-top: -8px;
 	cursor: pointer;
+	display: none;
 }
 
-.sidebar>.group .row>.label {
+.sidebar .group .row>.label {
 	margin: 0 18px 0 18px;
 	white-space: nowrap; /* 加上这个才能让中文也显示省略号，否则中文会自动换行 */
 	text-overflow: ellipsis;
@@ -96,40 +90,55 @@
 }
 
 /* 信息分组  */
-.sidebar>.group {
-	position: relative;
-	border-width: 0 0 0 0;
+.sidebar>.groups {
+	position: absolute;
+	border-width: 0;
+	overflow-x: hidden;
+	overflow-y: auto;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	top: 4.6em;
 }
 
-.sidebar>.group>.header>.label>span:hover {
+.sidebar>.groups>* {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+.sidebar>.groups.group {
+	position: relative;
+}
+
+.sidebar .group>.header>.label>span:hover {
 	text-decoration: underline;
 	cursor: pointer;
 }
 
 /* 信息条目列表  */
-.sidebar>.group>.rows {
+.sidebar .group>.rows {
 	overflow-x: hidden;
 	overflow-y: auto;
-	margin: 0 0 0 4px;
+	margin: 0 0 0 0px;
 	/* max-height: 8em;  */
 }
 
-.sidebar>.group>.rows>.row {
+.sidebar .group>.rows>.row {
 	cursor: pointer;
 	height: auto;
 	border-bottom: 1px solid #ccc;
 	border-bottom-style: solid;
 }
 
-.sidebar>.group>.rows>.row.last {
+.sidebar .group>.rows>.row.last {
 	border-bottom-width: 0;
 }
 
-.sidebar>.group>.rows>.row:hover {
+.sidebar .group>.rows>.row:hover {
 	font-weight: bold;
 }
 
-.sidebar>.group>.rows>.row>.header>.time {
+.sidebar .group>.rows>.row>.header>.time {
 	position: absolute;
 	height: 1.6em;
 	line-height: 1.6em;
@@ -145,11 +154,11 @@
 	font-size: 80%;
 }
 
-.sidebar>.group>.rows>.row>.header>.label {
+.sidebar .group>.rows>.row>.header>.label {
 	margin-right: 4.5em;
 }
 
-.sidebar>.group>.rows>.row>.detail {
+.sidebar .group>.rows>.row>.detail {
 	opacity: .9;
 	max-height: 3em;
 	overflow: hidden;
@@ -163,20 +172,46 @@
 	display: block;
 }
 
-.sidebar>.task{
-	position: absolute;
-	top: 4.6em;
-	bottom: 20em;
+/* 内滚动控制（每个group内部的条目区自滚动）*/
+.sidebar>.groups>.spliter {
+	display: none;
+	cursor: s-resize;
+	background-color: #eee;
+	height: .4em;
+	bottom: 16em;
 }
-.sidebar>.mail{
+
+.sidebar>.groups.innerScroll>.spliter {
+	display: block;
 	position: absolute;
+	left: 0;
+	right: 0;
+}
+
+.sidebar>.groups.innerScroll {
+	overflow: hidden;
+}
+
+.sidebar>.groups.innerScroll>.group.task {
+	bottom: 15.6em;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+
+.sidebar>.groups.innerScroll>.group.mail {
+	height: 16em;
+	position: absolute;
+	left: 0;
+	right: 0;
 	bottom: 0;
-	height: 20em;
 }
-.sidebar>.group>.rows {
+
+.sidebar>.groups.innerScroll>.group>.rows {
 	position: absolute;
 	top: 1.6em;
 	bottom: 0;
-	right:0;
-	left:0;
+	right: 0;
+	left: 0;
 }
