@@ -17,12 +17,15 @@
 <div id="top" class="ui-widget-header unselectable" unselectable="on"></div>
 <div id="middle" class="ui-widget-content">
 <!-- 桌面区域 -->
-<div id="center" class="bc-shortcuts unselectable" unselectable="on"></div>
+<div id="center" class="bc-shortcuts unselectable" unselectable="on" style="display:block"></div>
 
 <!-- 右边栏 -->
 <div id="right" class="ui-widget-content unselectable sidebar" unselectable="on"">
 	<!-- 大标题 -->
 	<div class="header ui-widget-header">
+		<div class="btns"><div class="btn ui-corner-all"><span class="ui-icon ui-icon-transferthick-e-w">
+			</span></div><div class="btn ui-corner-all"><span class="ui-icon ui-icon-wrench">
+			</span></div></div>
 		<div class="label">通知中心</div>
 		<div class="search"><a href="#"
 			class="ui-icon ui-icon-search" title="点击执行查询"></a><input
@@ -34,7 +37,7 @@
 			<div class="header row ui-widget-header">
 				<div class="icon ui-icon ui-icon-calendar"></div>
 				<div class="label"><span>待办</span></div>
-				<div class="btn ui-icon ui-icon-close"></div>
+				<div class="btn close ui-icon ui-icon-close"></div>
 			</div>
 			<div class="rows">
 				<div class="row">
@@ -103,6 +106,7 @@
 </div>
 	<script type="text/javascript" src="../../../ui-libs/jquery/1.9.1/jquery.min.js"></script>
 	<script type="text/javascript" src="../../../ui-libs/jquery-ui/1.10.2/ui/minified/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="../../../ui-libs/hammer/1.0.4/jquery.hammer.min.js"></script>
 	<script type="text/javascript" src="./sidebar.js"></script>
 </body>
 </html>

@@ -35,6 +35,23 @@
 	padding-bottom: 0.2em;
 }
 
+.sidebar>.header>.btns {
+	position: absolute;
+	right: 2px;
+	top: 0.5em;
+	padding: 0;
+	margin: 0;
+}
+
+.sidebar>.header>.btns>.btn.ui-state-default {
+	background: transparent;
+}
+.sidebar>.header>.btns>.btn {
+	display: inline-block;
+	margin: auto 1px;
+	cursor: pointer;
+}
+
 .sidebar>.header>.search {
 	position: relative;
 	display: inline-block;
