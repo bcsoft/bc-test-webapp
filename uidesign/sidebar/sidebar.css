@@ -46,6 +46,7 @@
 .sidebar>.header>.btns>.btn.ui-state-default {
 	background: transparent;
 }
+
 .sidebar>.header>.btns>.btn {
 	display: inline-block;
 	margin: auto 1px;
@@ -151,8 +152,13 @@
 	border-bottom-width: 0;
 }
 
-.sidebar .group>.rows>.row:hover {
+.sidebar .group>.rows>.row:hover>.header {
 	font-weight: bold;
+}
+
+.sidebar .group>.rows>.row:hover>.header>.label {
+	font-weight: bold;
+	text-decoration: underline;
 }
 
 .sidebar .group>.rows>.row>.header>.time {
