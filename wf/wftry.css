@@ -1,0 +1,14 @@
+* {
+    padding: 0;
+    margin: 0;
+    font: 1em 'Microsoft Yahei';
+}
+
+#canvasContainer {
+    margin: 10px;
+}
+
+#canvasContainer > div.kineticjs-content {
+    border: 1px solid gray;
+    margin: 0 auto;
+}
