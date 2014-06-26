@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style type="text/css">
+        *{
+            line-height: 16px;;
+        }
+        .icon{
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background-color: gray;
+            position: relative;/*解决水平不对齐问题*/
+            top: 4px; /*解决水平不对齐问题*/
+        }
+        .text{
+            outline: 0;
+            margin: 0;
+            padding: 0;
+            display: inline-block;
+        }
+        .none{
+           text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<div class="c">
+    <span class="icon"></span>Test
+</div>
+<div class="c">
+   <span class="icon"></span><span class="text">Test</span>
+</div>
+<div class="c">
+    <span class="icon"></span><a class="text" href="#">Test</a>
+</div>
+<div class="c">
+    <a class="text none" href="#"><span class="icon"></span></a><a class="text" href="#">Test</a>
+</div>
+</body>
+</html
