@@ -1,0 +1,66 @@
+<!doctype html>
+<html ng-app>
+<head>
+	<meta charset="UTF-8">
+	<title>px 与 em 单位之间的转换</title>
+	<style type="text/css">
+		body{
+			background-color: #000000;
+			color: #ffffff;
+			font-family: "微软雅黑", "宋体", sans-serif;
+			font-size: 12px;
+		}
+
+		.container{
+			background-color: #2b2b2b;
+			padding: 0.5em;
+			display: inline-block;
+		}
+		.box{
+			background-color: #666666;
+			margin: 0;
+			padding: 0;
+			border: none;
+			min-height: 10px;
+			box-sizing: border-box;
+		}
+		.box.em1{
+			width: 1em;
+		}
+		.box.em{
+			width: 10em;
+		}
+	</style>
+</head>
+<body style="font-size: 16px" ng-controller="myCtrl">
+<h1>px 与 em 单位之间的转换</h1>
+<p>body font-size=16px</p>
+<div style="line-height: 3em;height: 3em;">container font-size={{globalFontSize}}px <input type="range" min="10" max="24" step="2" ng-model="globalFontSize"></div>
+<div class="container" ng-style="bodyStyle">
+	<div class="box em1">1em</div>
+	<span>1em={{globalFontSize}}px</span>
+
+	<div id="embox" class="box em">10em</div>
+	<span>10em={{globalFontSize * 10}}px</span>
+</div>
+<h1>结论：</h1>
+<p>某元素1em的像素大小是其父元素的当前字体大小
+	<br>即如果 parent.fontSize = 16px，则 children 的 1em = 16px，3em = 3 * 16px = 48px
+</p>
+<script src="../../ui-libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="../../ui-libs/angular/1.2.16/angular.min.js"></script>
+<!-- <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="http://cdn.bootcss.com/angular.js/1.2.16/angular.min.js"></script> -->
+
+<script type="text/javascript">
+function myCtrl($scope){
+	$scope.globalFontSize = 12;
+    $scope.bodyStyle = {'font-size': $scope.globalFontSize + 'px'};
+	$scope.$watch('globalFontSize', function(newVal, oldVal) {
+    	console.log(newVal, oldVal);
+	    $scope.bodyStyle = {'font-size': newVal + 'px'};
+	});
+}
+</script>
+</body>
+</html>
