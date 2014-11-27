@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html style="padding:0;margin:0;width:100%;height:100%">
+<head>
+	<meta charset="utf-8">
+	<title>打印调整</title>
+	<style type="text/css">
+		html, body {margin: 0; padding: 0}
+		div.box {margin: 10px; padding: 10px; border: 1px solid #000}
+		span {font-size: 60%; font-weight: normal;}
+		h1 {margin-left: 10px}
+		img {margin: 0; padding: 0}
+	</style>
+</head>
+<body>
+<h1>寻找宽度设置的比例系数</h1>
+<div class="box">
+	<p>测量实际打印出来的尺寸 rw 与设置值 sw 进行对比，寻找比例系数 f = sw / rw</p>
+	<h4>sw=50mm</h4>
+	<img src="50mm.jpg" style="width: 50mm">
+	<h4>100mm</h4>
+	<img src="100mm.jpg" style="width: 100mm">
+	<h4>150mm</h4>
+	<img src="150mm.jpg" style="width: 150mm">
+</div>
+
+<div class="box">
+<h3>历史结果：</h3>
+<ul>
+	<li>
+		<h4>f = 0.9434 <span>（打印机：RICOH Aficio 3025 PCL 5e, 浏览器：Chrome 39.0.2171.71）</span></h4>
+		<div><img src="50mm.jpg" style="width: calc(50mm * 0.9434)"></div>
+		<div><img src="100mm.jpg" style="width: calc(100mm * 0.9434)"></div>
+		<div><img src="150mm.jpg" style="width: calc(150mm * 0.9434)"></div>
+	</li>
+</ul>
+</div>
+</body>
+</html>
