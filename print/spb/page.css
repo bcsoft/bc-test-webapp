@@ -54,7 +54,7 @@ body {
 .paper .row:not(:first-child) {border-top-width: 0;}
 .paper .row>table {border:none; table-layout: fixed; border-collapse: collapse; border-spacing: 0;width: 100%}
 /* table 内的 td 内边框控制*/
-.paper .row td{border: 1px solid #000;}
+.paper .row td{border: 1px solid #666;}
 .paper .row td:first-child{border-left: 0}
 .paper .row td:last-child{border-right: 0}
 .paper .row tr:first-child>td{border-top: 0}
@@ -104,9 +104,9 @@ body {
 .paper .align-right {text-align: right}
 
 /* 细水平线 */
-.paper .solid-line {border-bottom: 1px solid #000}
-.paper .dashed-line {border-bottom: 1px dashed #000}
-.paper .dotted-line {border-bottom: 1px dotted #000}
+.paper .solid-line {border-bottom: 1px solid #666}
+.paper .dashed-line {border-bottom: 1px dashed #666}
+.paper .dotted-line {border-bottom: 1px dotted #666}
 
 #tool {
 	z-index: 2;
