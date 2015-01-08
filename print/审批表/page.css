@@ -18,6 +18,9 @@ body {
 	padding: 10mm;
 	position: relative;
 }
+/* 打印时将字体设小 */
+.paper.print{font-size: 12px;}
+
 /* 大标题 */
 .paper>.title {
 	text-align: center;
@@ -64,11 +67,12 @@ body {
 	padding: 0; margin: 0;
 }
 /* 固定的文字标签 */
-.paper .label{font-weight: bold}
+.paper .label, .paper .task-name{font-weight: normal}
 .paper td.label{text-align: right;padding: 0.2em 0.25em}
 /* 用户填写的内容 */
 .paper .value,.paper pre.value{
-	font-style: italic;
+	/*font-style: italic;*/
+	font-family: SimSun, "宋体"
 
 	/* 自动换行的配置 */
 	word-break: break-all;
@@ -91,7 +95,7 @@ body {
 }
 .paper .signer-name {min-width: 5em}
 .paper .signed-date {min-width: 9em}
-.paper .task-name {margin-right: 1.5em;font-weight: bold}
+.paper .task-name {margin-right: 1.5em}
 
 /* 文本对齐 */
 .paper .align-left {text-align: left}
@@ -103,19 +107,22 @@ body {
 .paper .dashed-line {border-bottom: 1px dashed #000}
 .paper .dotted-line {border-bottom: 1px dotted #000}
 
-/* 工具 */
-.tool {
+#tool {
 	z-index: 2;
 	position: absolute;
 	bottom: 0.5em;right: 0.5em;
-	border-radius: 2em;
-	width: 4em;height: 4em;
-	cursor: pointer;
+	width: 4em;
+	/*border-radius: 2em;*/
+	/*cursor: pointer;*/
 	/*background-color: #2B2B2B;*/
-	background: url("print.png") center no-repeat;
-	background-size: 100%; /* 背景图片自动缩放 */
+	/*background: url("print.png") center no-repeat;*/
+	/*background-size: 100%; *//* 背景图片自动缩放 */
 	/*box-shadow: #000055 4px 4px;*/
 }
+/* 工具 */
+#tool img {width: 100%}
+#tool>div {opacity: 0.5}
+#tool>div:hover {opacity: 1}
 @media print {
-	.tool {display: none}
+	#tool {display: none}
 }
