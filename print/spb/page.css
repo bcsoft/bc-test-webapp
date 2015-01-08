@@ -5,8 +5,9 @@ body {
 	 * 1. 对于英文字符，首先查找Helvetica(Mac)，然后查找Tahoma(Win)，都找不到就用Arial(Mac&Win)；若是以上三者都缺失，则使用当前默认的sans-serif字体(操作系统或浏览器指定)；
 	 * 2. 对于中文字体，华文细黑STXihei(Mac)、微软雅黑Microsoft YaHei(Win)是这两个平台的默认中文字体。
 	*/
-	font-family: "Microsoft YaHei", "微软雅黑", SimSun, "宋体", STXihei, "华文细黑", FangSong, "仿宋", FangSong_GB2312, "仿宋_GB2312", Helvetica, Tahoma, Arial, sans-serif;
+	font-family: SimSun, "宋体", "Microsoft YaHei", "微软雅黑", STXihei, "华文细黑", FangSong, "仿宋", FangSong_GB2312, "仿宋_GB2312", Helvetica, Tahoma, Arial, sans-serif;
 	font-size: 16px;
+	/*letter-spacing: 0.01em; 字与字之间的间距 */
 }
 
 /* 纸张: 模拟 A4 纵向的宽度 */
@@ -75,6 +76,9 @@ body {
 .paper td.label{text-align: right;padding: 0.2em 0.25em}
 /* 用户填写的内容 */
 .paper .value,.paper pre.value{
+	/* 行高 */
+	line-height: 1.5em;
+
 	/* 自动换行的配置 */
 	word-break: break-all;
 	word-wrap: break-word;
