@@ -1,5 +1,8 @@
 /* http://www.w3.org/TR/CSS21/page.html#page-box */
-body {font-size: 12px;background-color: white;}
+body {
+	font-size: 14px;
+	background-color: white;
+}
 
 :root {
 	/*控制打印背景颜色和图片 https://chrome.google.com/webstore/detail/print-background-colors/gjecpgdgnlanljjdacjdeadjkocnnamk?utm_source=gmail*/
