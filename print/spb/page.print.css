@@ -26,3 +26,6 @@ http://www.tutorialspoint.com/css/css_paged_media.htm
 	/* 需要Chrome19+才支持哦 */
 	page-break-inside: avoid;
 }
+.paper .label, .paper .task-name {
+	color: #000;
+}

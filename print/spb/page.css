@@ -67,13 +67,14 @@ body {
 	padding: 0; margin: 0;
 }
 /* 固定的文字标签 */
-.paper .label, .paper .task-name{font-weight: normal}
+.paper .label, .paper .task-name{
+	color: #666;
+	/*font-weight: 600;*/
+	/*font-family: SimSun, "宋体"*/
+}
 .paper td.label{text-align: right;padding: 0.2em 0.25em}
 /* 用户填写的内容 */
 .paper .value,.paper pre.value{
-	/*font-style: italic;*/
-	font-family: SimSun, "宋体"
-
 	/* 自动换行的配置 */
 	word-break: break-all;
 	word-wrap: break-word;
@@ -109,7 +110,7 @@ body {
 
 #tool {
 	z-index: 2;
-	position: absolute;
+	position: fixed;
 	bottom: 0.5em;right: 0.5em;
 	width: 4em;
 	/*border-radius: 2em;*/
