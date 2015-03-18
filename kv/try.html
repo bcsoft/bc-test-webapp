@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>localStorage</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+	<div>
+		<button id="add">添加</button>
+		<button id="remove">移除</button>
+		<button id="clear">清空</button>
+	</div>
+	<div style="margin: 1em 0">
+		Key: <input id="key" type="text" value="k1">
+		value: <input id="value" type="text" value="v1">
+	</div>
+	<div id="msg"></div>
+<script type="text/javascript">
+	if(localStorage){
+		document.getElementById('msg').innerHTML = "Support localStorage";
+		var t = "";
+		for (var i = 0; i < localStorage.length; i++) {
+			t += "<br>" + localStorage.key(i) + "=" + localStorage.getItem(localStorage.key(i));
+		};
+		document.getElementById('msg').innerHTML += t;
+
+		document.getElementById('add').addEventListener("click", function (e) {
+			console.log("add");
+			localStorage[document.getElementById('key').value] = document.getElementById('value').value;
+			//localStorage.setItem(document.getElementById('key').value, document.getElementById('value').value);
+		});
+		document.getElementById('remove').addEventListener("click", function (e) {
+			delete localStorage[document.getElementById('key').value];
+			//localStorage.removeItem(document.getElementById('key').value);
+		});
+		document.getElementById('clear').addEventListener("click", function (e) {
+			localStorage.clear();
+		});
+	}else{
+		document.getElementById('msg').innerHTML = "Not support localStorage";
+	}
+</script>
+</body>
+</html>
