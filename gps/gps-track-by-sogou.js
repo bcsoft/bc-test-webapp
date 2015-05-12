@@ -50,7 +50,7 @@ jQuery(function() {
 			var flightPath = new sogou.maps.Polyline({
 				path: coordinates,
 				strokeColor: "#2b2b2b",
-				strokeOpacity: 1.0,
+				strokeOpacity: 0.5,
 				strokeWeight: 5
 			});
 			flightPath.setMap(map);
@@ -63,7 +63,7 @@ jQuery(function() {
 					color: "blue",
 					weight: 5,
 					endcap: "Round",
-					opacity: "75%",
+					opacity: "50%",
 					endArrow: "Classic",
 					endarrowlength: "long",
 					endarrowwidth: "wide"
