@@ -72,9 +72,9 @@ jQuery(function () {
 		map.centerAndZoom(center, 13);  // 初始化
 		map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
 		map.setViewport([new BMap.Point(minX, minY), new BMap.Point(maxX, maxY)]);// 设置地图可以显示整条轨迹
-		//map.addControl(new BMap.MapTypeControl({anchor: BMAP_ANCHOR_TOP_RIGHT})); // 添加地图类型控件
-		//map.addControl(new BMap.ScaleControl({anchor: BMAP_ANCHOR_BOTTOM_LEFT}));// 左下角，添加比例尺
-		//map.addControl(new BMap.NavigationControl());  //左上角，添加默认缩放平移控件
+		map.addControl(new BMap.MapTypeControl({anchor: BMAP_ANCHOR_TOP_RIGHT})); // 添加地图类型控件
+		map.addControl(new BMap.ScaleControl({anchor: BMAP_ANCHOR_BOTTOM_LEFT}));// 左下角，添加比例尺
+		map.addControl(new BMap.NavigationControl());  //左上角，添加默认缩放平移控件
 		//new BMapLib.RectangleZoom(map, {followText: "拖拽鼠标进行操作"	}).open();  //开启鼠标框选放大 .close() 则关闭
 
 		// 4. 标记起点

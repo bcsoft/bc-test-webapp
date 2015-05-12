@@ -52,12 +52,39 @@ jQuery(function () {
 			//设置地图语言类型，默认：中文简体
 			lang:"zh_cn"
 		});
-		// 根据指定的范围调整地图视野
-		map.setBounds(new AMap.Bounds(new AMap.LngLat(minX, minY), new AMap.LngLat(maxX, maxY)));
 
 		// 地图加载完毕事件
 		AMap.event.addListener(map,'complete',function(){
-			//document.getElementById('info').innerHTML = "地图图块加载完毕！当前地图中心点为：" + map.getCenter();
+
+		});
+		// 根据指定的范围调整地图视野
+		map.setBounds(new AMap.Bounds(new AMap.LngLat(minX, minY), new AMap.LngLat(maxX, maxY)));
+
+		// 地图类型切换
+		map.plugin(["AMap.MapType"], function() {
+			var type = new AMap.MapType({defaultType:0});//初始状态使用2D地图
+			map.addControl(type);
+		});
+
+		// 在地图中添加ToolBar插件
+		map.plugin(["AMap.ToolBar"],function(){
+			var toolBar = new AMap.ToolBar();
+			map.addControl(toolBar);
+		});
+
+		//加载比例尺插件
+		map.plugin(["AMap.Scale"], function(){
+			var scale = new AMap.Scale();
+			map.addControl(scale);
+		});
+
+		//在地图中添加鹰眼插件
+		map.plugin(["AMap.OverView"],function(){
+			var overView = new AMap.OverView({
+				isOpen: true,
+				visible: true
+			});
+			map.addControl(overView);
 		});
 
 		// 4. 标记起点
