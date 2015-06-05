@@ -5,6 +5,7 @@ jQuery(function () {
 	var gps;
 	jQuery.getJSON("gps.json", function (data) {
 		gps = data;
+		console.log("gps=%o", gps);
 		console.timeEnd("load 'gps.json'");
 		// 百度对外接口的坐标系并不是GPS采集的真实经纬度，需要通过坐标转换接口进行转换
 		// http://malagis.com/baidu-maps-api-map-coordinate-conversion.html
