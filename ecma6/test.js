@@ -22,6 +22,9 @@ addRow(3, "for...of", window.support$forof, "Chrome38+", "Firefox37Y");
 // Promise
 addRow(4, "Promise", typeof Promise == "function", "Chrome32+ 'Firefox29+ 'Opera19+ 'Safari7.1+ 'Edge", "Firefox37Y IEN");
 // fetch https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API
+// 	中文blog: http://www.w3ctech.com/topic/854
+// 		Fetch 规范: https://fetch.spec.whatwg.org/
+// 		Fetch 兼容实现: https://github.com/github/fetch
 addRow(4, "fetch", typeof fetch == "function", "Chrome42+ Firefox39+ 'Opera29+", "");
 // Worker https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API
 addRow(4, "Worker", typeof Worker  == "function", "Chrome17+ 'Firefox33+ 'Opera24+", "");
