@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>not</title>
+<script type="text/javascript" src="../../ui-libs/jquery/1.7.2/jquery.min.js"></script>
+<style type="text/css">
+	form > * {margin: 0.25em}
+</style>
+</head>
+<body>
+<form name="form" style="margin: 3px;">
+	<span class="radios" data-name="result" data-scope="local" data-type="string" data-validate="required">
+		<label><input type="radio" name="a" value="a1" checked>a1</label>
+		<label><input type="radio" name="a" value="a2">a2</label>
+		<label><input type="radio" name="a" value="a3" checked>a3</label>
+	</span><br>
+	<label><input type="checkbox" name="b" value="b1" checked>b1</label>
+	<label><input type="checkbox" name="b" value="b2">b2</label>
+	<label><input type="checkbox" name="b" value="b3" checked>b3</label><br>
+	<label><input type="radio" name="cc" value="cc">cc</label><br>
+	<label><input type="radio" name="c" value="c1" class="ignore">c</label><br>
+	<input type="button" name="d" value="d"><br>
+	<input type="text" name="e" value="E">
+	<input type="hidden" name="f" value="F">f is hidden
+	<input type="number" name="j" value="10">
+	<input type="range" name="k" value="10">
+	<br>
+	<select name="g">
+		<option selected>g1</option>
+		<option>g2</option>
+		<option>g3</option>
+	</select><br>
+	<select name="h" multiple>
+		<option selected>h1</option>
+		<option>h2</option>
+		<option selected>h3</option>
+	</select>
+	<textarea name="i">1</textarea>
+	<div name="h">div</div>
+</form>
+
+<script type="text/javascript">
+	var c = [];
+	//var els = document.querySelectorAll("input:not(.ignore, [type=button], .radios [type=radio])");
+	var els = document.querySelectorAll("input:not(.ignore), textarea:not(.ignore), select:not(.ignore)");
+	console.log(els.length + ", form.elements=" + form.elements.length);
+	$(":input:not(.ignore, :button, .radios [type=radio])").each(function(){
+		c.push(this.name);
+	});
+	console.log(c.join(" "));
+	console.log($("#aaaaaaaaaa").val() === undefined); // true
+	console.log($("input[name=b]:checked").val()); // b1
+	console.log($("input[name=b]:checked").serialize()); // b=b1&b=b3
+	console.log($("input[name=b]:checked").serializeArray()); // [{name:"b",value:"b1"},{name:"b",value:"b3"}]
+	console.log($("[type=checkbox][name=b]:checked").map(function(){return this.value}).get());["b1", "b3"]
+	console.log($("select[name=h]").val()); // ["h1", "h3"]
+</script>
+</body>
+</html>
