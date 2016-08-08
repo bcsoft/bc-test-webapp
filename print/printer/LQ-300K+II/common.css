@@ -1,32 +1,32 @@
 html, body {
+	background-color: #2b2b2b;
 	width: 100%;
 	height: 100%;
 	margin: 0;
 	padding: 0;
-	background-color: #ccc;
 	font-size: 14px;
 	font-family: '宋体', \5b8b\4f53, 'Microsoft Yahei', '微软雅黑', Arial;
 }
 
 /* 打印纸张模拟 */
 .paper {
-	position: relative;
+	background-color: #ffe;
 	box-sizing: border-box;
+	text-align: left;
+	overflow: hidden;
 	/* 模拟纸张边缘的阴影 */
 	box-shadow: #666 4px 4px 8px;
 	/* 纸张左右居中 */
-	margin: 4px auto;
+	margin: 0.5em auto;
 	/* 模拟纸张宽度 */
 	width: calc(210mm * 0.9390);
 	/* 模拟纸张高度 */
 	height: calc(140mm * 0.9390);
-	background-color: #fff;
-	text-align: left;
-	overflow: hidden;
 }
 
 /* 打印内容区模拟 */
 .content {
+	background-color: #fff;
 	position: relative;
 	box-sizing: border-box;
 	overflow: hidden;

@@ -1,0 +1,185 @@
+html, body {
+	background-color: #2b2b2b;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-family: "华文中宋", sans-serif;
+	font-size: 14px;
+	font-weight: normal;
+}
+
+/* 打印纸张模拟 */
+.paper{
+	background-color: #ffe;
+	box-sizing: border-box;
+	text-align: left;
+	overflow: hidden;
+	/* 模拟纸张边缘的阴影 */
+	box-shadow: #666 4px 4px 8px;
+	/* 纸张左右居中 */
+	margin: 0.5em auto;
+	/* 模拟纸张宽度 */
+	width: calc(210mm * 0.9390);
+	/* 模拟纸张高度 */
+	height: calc(140mm * 0.9390);
+	/* 模拟打印边距 */
+	padding: 5mm 5mm 5mm 5mm;
+}
+
+/* 打印内容区模拟 */
+.content {
+	background-color: #fff;
+	position: relative;
+	box-sizing: border-box;
+	overflow: auto;
+	width: 100%;
+	height: 100%;
+
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+.content > * {
+	align-self: stretch;
+	flex: none;
+}
+.content > .details {
+	flex: 1 1 0%;
+}
+.content .line {
+	line-height: 2em;
+}
+.content .line.top-border {
+	border-top: 1px solid #000;
+}
+.content .line.bottom-border {
+	border-bottom: 1px solid #000;
+}
+
+/* 数字类型字体 */
+.content .number {
+	font-family: "微软雅黑", sans-serif;
+}
+
+/* 标题 */
+.head {
+	background-color: #fff;
+}
+.head > .title {
+	text-align: center;
+	font-size: 2.5em;
+	font-weight: bold;
+	margin: 0;
+	position: relative;
+}
+
+/* 单号、时间*/
+.head .title > .codes {
+	text-align: right;
+	font-weight: normal;
+	font-size: 0.8rem;
+	position: absolute;
+	right: 0.5em;
+	bottom: 2px;
+}
+.head .title > .codes > .code {
+	text-align: left;
+}
+
+.head > .line > .manage-no{
+	display: inline-block;
+	padding-left: 3em;
+}
+
+/* 明细行 */
+.details > table {
+	border-collapse: collapse;
+	width: 100%;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding: 0;
+}
+.details > table tr {
+	height: 1.7em;
+	text-align: center;
+}
+.details > table td {
+	vertical-align: top;
+	padding: 0 2px;
+}
+.details > table .money {
+	text-align: right;
+	padding-right: 10px;
+}
+.details > table .mark {
+	text-align: left;
+}
+
+/* 页脚 */
+.foot {
+	background-color: #fff;
+}
+.foot > .line > .left, .foot > .line > .right {
+	display: inline-block;
+}
+.foot > .line > .left {
+	width: 70%;
+}
+.foot > .line > .right {
+	width: 30%;
+}
+.foot > .line > .right.confirmor {
+	text-indent: 1em;
+}
+
+/* 打印 */
+@media print {
+	:root {
+		/* 打印背景颜色和图片 */
+		-webkit-print-color-adjust: exact;
+	}
+	@page {
+		/* 纸张大小 */
+		size: 241mm 140mm;
+		/* 页边距 */
+		margin: 5mm 5mm 5mm 5mm;
+	}
+
+	html, body {
+		background-color: #fff;
+		font-size: 14px;
+		font-family: "华文中宋", sans-serif;
+	}
+
+	.paper {
+		box-shadow: none;
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		padding: 0;
+		background-color: #fff;
+	}
+
+	/* 数字类型字体 */
+	.content .number {
+		font-family: "微软雅黑", sans-serif;
+	}
+
+	/* 需要Chrome19+才支持哦 */
+	/* 在此元素后增加分页符 */
+	.breakAfter {
+		/*http://www.w3school.com.cn/css/pr_print_page-break-after.asp*/
+		page-break-after: always;
+		page-break-inside: avoid;
+	}
+	/* 在此元素前增加分页符 */
+	.breakBefore {
+		/*http://www.w3school.com.cn/css/pr_print_page-break-before.asp*/
+		page-break-before: always;
+		page-break-inside: avoid;
+	}
+}
