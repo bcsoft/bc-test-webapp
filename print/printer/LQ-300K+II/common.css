@@ -1,0 +1,113 @@
+html, body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	background-color: #ccc;
+	font-size: 14px;
+	font-family: '宋体', \5b8b\4f53, 'Microsoft Yahei', '微软雅黑', Arial;
+}
+
+/* 打印纸张模拟 */
+.paper {
+	position: relative;
+	box-sizing: border-box;
+	/* 模拟纸张边缘的阴影 */
+	box-shadow: #666 4px 4px 8px;
+	/* 纸张左右居中 */
+	margin: 4px auto;
+	/* 模拟纸张宽度 */
+	width: calc(210mm * 0.9390);
+	/* 模拟纸张高度 */
+	height: calc(140mm * 0.9390);
+	background-color: #fff;
+	text-align: left;
+	overflow: hidden;
+}
+
+/* 打印内容区模拟 */
+.content {
+	position: relative;
+	box-sizing: border-box;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+}
+
+/* 描述性文字 */
+.msg {
+	position: absolute;
+	left: 45mm;
+	/*word-break: break-all;*/
+	width: 105mm;
+	font-size: 60%;
+}
+#browser {
+	position: absolute;
+	top: 102mm;
+	left: 45mm;
+	/*word-break: break-all;*/
+	width: 100mm;
+}
+#sum {
+	left: 45mm;
+	top: 45mm;
+	display: inline-block;
+}
+#sum li {
+	line-height: 1.5em;
+}
+#sum li:first-child {
+	margin-top: 0.5em;
+}
+
+/* 标尺 */
+.ruler {
+	display: block;
+	position: absolute;
+	width: calc(300mm * 0.9390);
+}
+.ruler.lt {
+	left: 0;
+	top: 0;
+}
+.ruler.rb {
+	right: 0;
+	bottom: 0;
+}
+div.ruler {
+	height: calc(300mm * 0.9390);
+}
+div.ruler.lt {
+	background-image: url('../ruler-300x300-lt.png');
+	background-size: calc(300mm * 0.9390) calc(300mm * 0.9390);
+}
+div.ruler.rb {
+	background-image: url('../ruler-300x300-rb.png');
+	background-size: calc(300mm * 0.9390) calc(300mm * 0.9390);
+}
+
+/* 打印 */
+@media print {
+	:root {
+		/*控制打印背景颜色和图片 https://chrome.google.com/webstore/detail/print-background-colors/gjecpgdgnlanljjdacjdeadjkocnnamk?utm_source=gmail*/
+		-webkit-print-color-adjust: exact;
+	}
+	.msg {
+		left: 45mm;
+		top: 45mm;
+	}
+	@page {
+		size: 210mm 140mm;
+	}
+	html, body {
+		background-color: #ffffff
+	}
+	.paper {
+		box-shadow: none;
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		padding: 0;
+	}
+}

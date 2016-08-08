@@ -1,0 +1,13 @@
+.paper {
+	/* 模拟纸张宽度 */
+	width: calc(210mm * 0.9390);
+}
+.msg {
+	width: 105mm;
+}
+
+@media print {
+	@page {
+		size: 210mm 140mm;
+	}
+}

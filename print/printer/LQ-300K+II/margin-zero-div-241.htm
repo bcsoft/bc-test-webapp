@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<title>无边距</title>
+	<link rel="stylesheet" type="text/css" media="all" href="common.css" />
+	<link rel="stylesheet" type="text/css" media="all" href="page-241.css" />
+	<link rel="stylesheet" type="text/css" media="all" href="margin-zero.css" />
+</head>
+
+<body>
+	<div class="paper">
+		<div class="content">
+			<div class="ruler lt"></div>
+			<div class="ruler rb"></div>
+			<div id="sum" class="msg">
+				无边距打印 DIV 版：纸张 241mm x 140
+				<ui>
+					<li>有效打印区域：宽L 202mm (实打总长)、高H 130mm (实打总高)</li>
+					<li>左偏移量 DL：4mm (顶部水平尺左端缺失的标尺量)</li>
+					<li>上偏移量 DT：5mm (左侧垂直尺顶端缺失的标尺量)</li>
+					<li>右偏移量 DR：36mm (底部水平尺右端缺失的标尺量)</li>
+					<li>下偏移量 DB：4mm (右侧垂直尺底部缺失的标尺量)</li>
+				</ui>
+				注：打印边距设为不小于偏移量值，方保证内容不被裁减、完整打印出来
+			</div>
+			<div id="browser" class="msg"></div>
+		</div>
+	</div>
+	<script src="print.js"></script>
+</body>
+</html>

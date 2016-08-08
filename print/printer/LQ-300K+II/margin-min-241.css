@@ -1,0 +1,10 @@
+.paper {
+	/* 模拟打印边距 */
+	padding: 5mm 35mm 5mm 4mm;
+}
+
+@media print {
+	@page {
+		margin: 5mm 35mm 5mm 4mm;
+	}
+}
