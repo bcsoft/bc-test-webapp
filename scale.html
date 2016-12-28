@@ -68,10 +68,36 @@
 	<div class="container"><div class="text scale">中华人民共和国成立 100 周年</div></div>
 
 	<script type="text/javascript">
+		"use strict"
 		function update(value){
 			var scaleEls = document.querySelectorAll(".scale");
 			scaleEls.forEach(el=>el.style.transform = 'scale(' + value + ')');
 			console.log(value + "-" + scaleEls.length);
+		}
+		window.onload = () => {
+			console.log("support arrow function");
+			var nodeList = document.querySelectorAll("td");
+			var array = [0, 1, 2];
+
+			try {
+				array.forEach(n => {});
+				console.log("support Array.forEach");
+			} catch (e){console.log("unsupport Array.forEach");}
+
+			try {
+				nodeList.forEach(node => {})
+				console.log("support NodeList.forEach");
+			} catch (e){console.log("unsupport NodeList.forEach");}
+
+			try {
+				for (var a of array) {}
+				console.log("support for...of Array");
+			} catch (e){console.log("unsupport for...of Array");}
+
+			try {
+				for (var node of nodeList) {}
+				console.log("support for...of NodeList");
+			} catch (e){console.log("unsupport for...of NodeList");}
 		}
 	</script>
 </body>
