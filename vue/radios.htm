@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Vue Radios</title>
+</head>
+<body>
+<div id="TEST">
+<form name="n1">
+  <input type="radio" name="deposit1" v-model="deposit1" value="true" data-validate="required">是
+  <input type="radio" name="deposit1" v-model="deposit1" value="false" data-validate="required">否
+  <div>{{deposit1}}</div>
+</form>
+<form name="n2">
+  <template v-for="item in deposits">
+  <input type="radio" name="deposit2" v-model="deposit2" :value="item[0]" data-validate="required">{{item[1]}}
+  </template>
+  <div>{{deposit2}}</div>
+</form>
+</div> 
+<script type="text/javascript" src="https://vuejs.org/js/vue.min.js"></script>
+<script>
+  let deposits = [[true, "是"], [false, "否"]];
+  new Vue({
+    el: "#TEST",
+    data: {
+      deposits: deposits,
+      deposit1: false,
+      deposit2: true
+    }
+  });
+</script>
+</body>
+</html>
