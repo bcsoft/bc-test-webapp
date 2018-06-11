@@ -1,152 +1,152 @@
 <!doctype html>
 <html>
 <head>
-	<meta charset="UTF-8">
+  <meta charset="UTF-8">
 
-	<style type="text/css">
-		body{
-			background-color: #000000;
-			color: #ffffff;
-			font-family: "微软雅黑", "宋体", sans-serif;
-		}
-		.box{
-			border: 1px solid #666666;
-			width: 45em;
-			margin: 1em;
-			padding: 0.25em;
-		}
-		.box > *{
-			margin: 0;
-			padding: 0;
-			list-style-type: none;
-		}
-		li{
-			margin: .5em 0;
-		}
-		li > h4{
-			margin: 0;
-			padding: 0;
-		}
-		.input{
-			padding: 0 .25em;
-			margin: 0.25em 0;
-			border: none;
-			border-bottom: 1px solid #666666;
-			/*text-decoration: underline;*/
-			word-break: break-all;
-			word-wrap: break-word;
-			min-height: 1.5em;
-			line-height: 1.5em;
-			box-sizing: border-box;
-			width: 100%;
-			color: inherit;
+  <style type="text/css">
+    body{
+      background-color: #000000;
+      color: #ffffff;
+      font-family: "微软雅黑", "宋体", sans-serif;
+    }
+    .box{
+      border: 1px solid #666666;
+      width: 45em;
+      margin: 1em;
+      padding: 0.25em;
+    }
+    .box > *{
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+    }
+    li{
+      margin: .5em 0;
+    }
+    li > h4{
+      margin: 0;
+      padding: 0;
+    }
+    .input{
+      padding: 0 .25em;
+      margin: 0.25em 0;
+      border: none;
+      border-bottom: 1px solid #666666;
+      /*text-decoration: underline;*/
+      word-break: break-all;
+      word-wrap: break-word;
+      min-height: 1.5em;
+      line-height: 1.5em;
+      box-sizing: border-box;
+      width: 100%;
+      color: inherit;
 
-			/* read-only | read-write | read-write-plaintext-only;*/
-			-webkit-user-modify: read-write-plaintext-only;
-			-moz-user-modify: read-write;
-			-moz-user-modify: read-write-plaintext-only;
-			-ms-user-modify: read-write;
-			user-modify: read-write;
-			user-modify: read-write-plaintext-only;
+      /* read-only | read-write | read-write-plaintext-only;*/
+      -webkit-user-modify: read-write-plaintext-only;
+      -moz-user-modify: read-write;
+      -moz-user-modify: read-write-plaintext-only;
+      -ms-user-modify: read-write;
+      user-modify: read-write;
+      user-modify: read-write-plaintext-only;
 
-			outline: none;
-			font: inherit;
-			opacity: .8;
-			position: relative;
+      outline: none;
+      font: inherit;
+      opacity: .8;
+      position: relative;
 
-			/*textarea*/
-			resize: none;
-			background: none;
+      /*textarea*/
+      resize: none;
+      background: none;
 
-			/*首行缩进两个汉字*/
-			/*text-indent: 2em;*/
-		}
-		.input:focus{
-			border-bottom-color: #0189FF;
-			/*background-color: #262626;*/
-			/*box-shadow: 0 0 0 1px rgba(0,0,0,.1);*/
-			opacity: 1;
-		}
-		.input:hover{
-		}
-		div.input{
+      /*首行缩进两个汉字*/
+      /*text-indent: 2em;*/
+    }
+    .input:focus{
+      border-bottom-color: #0189FF;
+      /*background-color: #262626;*/
+      /*box-shadow: 0 0 0 1px rgba(0,0,0,.1);*/
+      opacity: 1;
+    }
+    .input:hover{
+    }
+    div.input{
 
-		}
-		/*模拟div的placeholder*/
-		div.input:empty:before, pre.input:empty:before{
-			content: "Placeholder Text";
-			position: absolute;
-			bottom: 0;
-			left: 0 .25em;
-			color: gray;
-			font-style: italic;
-		}
-		span.input{
-		}
-		.input2{
-			padding: 0 .25em;
-			/*border-bottom: 1px solid black;*/
-			text-decoration: underline;
-			word-break: break-all;
-			word-wrap: break-word;
-			min-width: 10em;
-			display: inline;
+    }
+    /*模拟div的placeholder*/
+    div.input:empty:before, pre.input:empty:before{
+      content: "Placeholder Text";
+      position: absolute;
+      bottom: 0;
+      left: 0 .25em;
+      color: gray;
+      font-style: italic;
+    }
+    span.input{
+    }
+    .input2{
+      padding: 0 .25em;
+      /*border-bottom: 1px solid black;*/
+      text-decoration: underline;
+      word-break: break-all;
+      word-wrap: break-word;
+      min-width: 10em;
+      display: inline;
 
-			/* read-only | read-write | read-write-plaintext-only;*/
-			-webkit-user-modify: read-write-plaintext-only;
-			user-modify: read-write;
-		}
+      /* read-only | read-write | read-write-plaintext-only;*/
+      -webkit-user-modify: read-write-plaintext-only;
+      user-modify: read-write;
+    }
 
-		/*选择文本的颜色控制*/
-		::selection {
-		    color: red; 
-		    background: yellow;
-		}
-		::-webkit-selection { /* Code for Firefox */
-		    color: red;
-		    background: yellow;
-		}
-		::-moz-selection { /* Code for Firefox */
-		    color: red;
-		    background: yellow;
-		}
-	</style>
+    /*选择文本的颜色控制*/
+    ::selection {
+        color: red; 
+        background: yellow;
+    }
+    ::-webkit-selection { /* Code for Firefox */
+        color: red;
+        background: yellow;
+    }
+    ::-moz-selection { /* Code for Firefox */
+        color: red;
+        background: yellow;
+    }
+  </style>
 </head>
 <body>
 <div class="box">
 <h3>步骤一：前期调查</h3>
 <ul>
-	<li>
-		<h4>1.1. 带着疑问致电乘客了解情况：(div:empty)</h4>
-		<div class="input" contenteditable></div>
-	</li>
-	<li>
-		<h4>1.2. 带着疑问致电乘客了解情况：(div)</h4>
-		<div class="input" contenteditable>
+  <li>
+    <h4>1.1. 带着疑问致电乘客了解情况：(div:empty)</h4>
+    <div class="input" contenteditable></div>
+  </li>
+  <li>
+    <h4>1.2. 带着疑问致电乘客了解情况：(div)</h4>
+    <div class="input" contenteditable>
 据来电者反映：客在中山六路缓慢行车，反映该出租车在后面不停闪灯，走到六榕寺后灯位置，司机拿着铁棍，拍自己车窗口，说：”下车，下车，他妈的，你以为路是你家的吗？客就下车，想用手机拍下司机的车牌，司机就阻拦客人拍摄，\r\n然后客就报警，司机就跑了，客说司机还刮花了自己的车。 <br>注：div内的&lt;br&gt;只是换行不产生空行
-		</div>
-	</li>
-	<li>
-		<h4>2.1. 带着疑问致电乘客了解情况：(pre:empty)</h4>
-		<pre class="input" contenteditable></pre>
-	</li>
-	<li>
-		<h4>2.2. 带着疑问致电乘客了解情况：(pre)</h4>
-		<pre class="input" contenteditable>
+    </div>
+  </li>
+  <li>
+    <h4>2.1. 带着疑问致电乘客了解情况：(pre:empty)</h4>
+    <pre class="input" contenteditable></pre>
+  </li>
+  <li>
+    <h4>2.2. 带着疑问致电乘客了解情况：(pre)</h4>
+    <pre class="input" contenteditable>
 据来电者反映：客在中山六路缓慢行车，反映该出租车在后面不停闪灯，走到六榕寺后灯位置，司机拿着铁棍，拍自己车窗口，说：”下车，下车，他妈的，你以为路是你家的吗？客就下车，想用手机拍下司机的车牌，司机就阻拦客人拍摄，\r\n然后客就报警，司机就跑了，客说司机还刮花了自己的车。 <br>注：pre内的&lt;br&gt;换行后会产生一个空行</pre>
-	</li>
-	<li>
-		<h4>2.1. 带着疑问致电乘客了解情况：(textarea:empty)</h4>
-		<textarea class="input" placeholder="textarea's placeholder"></textarea>
-	</li>
-	<li>
-		<h4>3.1. 带着疑问致电乘客了解情况：(span:empty)</h4>
-		<span class="input" contenteditable></span>
-	</li>
-	<li>
-		<h4>3.2. 带着疑问致电乘客了解情况：(span)</h4>
-		<span class="input" contenteditable>据来电者反映：客在中山六路缓慢行车，反映该出租车在后面不停闪灯，走到六榕寺后灯位置，司机拿着铁棍，拍自己车窗口，说：”下车，下车，他妈的，你以为路是你家的吗？客就下车，想用手机拍下司机的车牌，司机就阻拦客人拍摄，\r\n然后客就报警，司机就跑了，客说司机还刮花了自己的车。 <br>注：span内的&lt;br&gt;只是换行不产生空行</span>
-	</li>
+  </li>
+  <li>
+    <h4>2.1. 带着疑问致电乘客了解情况：(textarea:empty)</h4>
+    <textarea class="input" placeholder="textarea's placeholder"></textarea>
+  </li>
+  <li>
+    <h4>3.1. 带着疑问致电乘客了解情况：(span:empty)</h4>
+    <span class="input" contenteditable></span>
+  </li>
+  <li>
+    <h4>3.2. 带着疑问致电乘客了解情况：(span)</h4>
+    <span class="input" contenteditable>据来电者反映：客在中山六路缓慢行车，反映该出租车在后面不停闪灯，走到六榕寺后灯位置，司机拿着铁棍，拍自己车窗口，说：”下车，下车，他妈的，你以为路是你家的吗？客就下车，想用手机拍下司机的车牌，司机就阻拦客人拍摄，\r\n然后客就报警，司机就跑了，客说司机还刮花了自己的车。 <br>注：span内的&lt;br&gt;只是换行不产生空行</span>
+  </li>
 </ul>
 
 </div>

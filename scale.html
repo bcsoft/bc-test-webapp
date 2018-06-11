@@ -4,101 +4,101 @@
 <title>Scale</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <style>
-	* {
-		box-sizing: border-box;
-	}
+  * {
+    box-sizing: border-box;
+  }
 
-	table {
-		border-collapse: collapse;
-		empty-cells: show;
-		table-layout: fixed;
-	}
+  table {
+    border-collapse: collapse;
+    empty-cells: show;
+    table-layout: fixed;
+  }
 
-	th, .container {
-		position: relative;
-		border: 2px solid #000;
-		overflow: hidden;
-		white-space: nowrap;
-		text-align: right;
-		height: 40px;
-	}
-	.container > .text {
-		height: 20px;
-		position: absolute;
-		right: 2px;
-		top: 50%;
-		margin-top: -10px;
-		background-color: #888;
-	}
-	.container > .scale {
-		transform: scale(0.5);
-		transform-origin: right center 0;
-	}
+  th, .container {
+    position: relative;
+    border: 2px solid #000;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: right;
+    height: 40px;
+  }
+  .container > .text {
+    height: 20px;
+    position: absolute;
+    right: 2px;
+    top: 50%;
+    margin-top: -10px;
+    background-color: #888;
+  }
+  .container > .scale {
+    transform: scale(0.5);
+    transform-origin: right center 0;
+  }
 
-	div.container {
-		width:145px;
-		margin: 2px 0;
-	}
+  div.container {
+    width:145px;
+    margin: 2px 0;
+  }
 </style>
 </head>
 <body>
-	<p>要求：1）固定列宽。 2）文字水平右对齐、垂直居中。 3）文字过多超出列宽时，自动缩小到看到全部内容。</p>
-	<div>缩放比例：<input type="number" min="0.1" max="5" step="0.1" value="0.5" onchange="update(this.value)"> <button onclick="print()">打印</button></div>
-	<h4>table：</h4>
-	<table cellpadding=0 cellspacing=0>
-		<col style="width:145px">
-		<col style="width:145px">
-		<col style="width:55px">
-		<thead>
-			<tr>
-				<th>原值</th>
-				<th>缩放</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td class="container"><div class="text">中华人民共和国成立 100 周年</div></td>
-				<td class="container"><div class="text scale">中华人民共和国成立 100 周年</div></td>
-			</tr>
-		</tbody>
-	</table>
+  <p>要求：1）固定列宽。 2）文字水平右对齐、垂直居中。 3）文字过多超出列宽时，自动缩小到看到全部内容。</p>
+  <div>缩放比例：<input type="number" min="0.1" max="5" step="0.1" value="0.5" onchange="update(this.value)"> <button onclick="print()">打印</button></div>
+  <h4>table：</h4>
+  <table cellpadding=0 cellspacing=0>
+    <col style="width:145px">
+    <col style="width:145px">
+    <col style="width:55px">
+    <thead>
+      <tr>
+        <th>原值</th>
+        <th>缩放</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="container"><div class="text">中华人民共和国成立 100 周年</div></td>
+        <td class="container"><div class="text scale">中华人民共和国成立 100 周年</div></td>
+      </tr>
+    </tbody>
+  </table>
 
-	<h4>div</h4>
-	<div class="container"><div class="text">中华人民共和国成立 100 周年</div></div>
-	<div class="container"><div class="text scale">中华人民共和国成立 100 周年</div></div>
+  <h4>div</h4>
+  <div class="container"><div class="text">中华人民共和国成立 100 周年</div></div>
+  <div class="container"><div class="text scale">中华人民共和国成立 100 周年</div></div>
 
-	<script type="text/javascript">
-		"use strict"
-		function update(value){
-			var scaleEls = document.querySelectorAll(".scale");
-			scaleEls.forEach(el=>el.style.transform = 'scale(' + value + ')');
-			console.log(value + "-" + scaleEls.length);
-		}
-		window.onload = () => {
-			console.log("support arrow function");
-			var nodeList = document.querySelectorAll("td");
-			var array = [0, 1, 2];
+  <script type="text/javascript">
+    "use strict"
+    function update(value){
+      var scaleEls = document.querySelectorAll(".scale");
+      scaleEls.forEach(el=>el.style.transform = 'scale(' + value + ')');
+      console.log(value + "-" + scaleEls.length);
+    }
+    window.onload = () => {
+      console.log("support arrow function");
+      var nodeList = document.querySelectorAll("td");
+      var array = [0, 1, 2];
 
-			try {
-				array.forEach(n => {});
-				console.log("support Array.forEach");
-			} catch (e){console.log("unsupport Array.forEach");}
+      try {
+        array.forEach(n => {});
+        console.log("support Array.forEach");
+      } catch (e){console.log("unsupport Array.forEach");}
 
-			try {
-				nodeList.forEach(node => {})
-				console.log("support NodeList.forEach");
-			} catch (e){console.log("unsupport NodeList.forEach");}
+      try {
+        nodeList.forEach(node => {})
+        console.log("support NodeList.forEach");
+      } catch (e){console.log("unsupport NodeList.forEach");}
 
-			try {
-				for (var a of array) {}
-				console.log("support for...of Array");
-			} catch (e){console.log("unsupport for...of Array");}
+      try {
+        for (var a of array) {}
+        console.log("support for...of Array");
+      } catch (e){console.log("unsupport for...of Array");}
 
-			try {
-				for (var node of nodeList) {}
-				console.log("support for...of NodeList");
-			} catch (e){console.log("unsupport for...of NodeList");}
-		}
-	</script>
+      try {
+        for (var node of nodeList) {}
+        console.log("support for...of NodeList");
+      } catch (e){console.log("unsupport for...of NodeList");}
+    }
+  </script>
 </body>
 </html>

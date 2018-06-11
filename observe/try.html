@@ -7,26 +7,26 @@
 <body>
 <!-- Object.observe API概述 http://www.cnblogs.com/rubylouvre/p/3427171.html -->
 <script type="text/javascript">
-	function output(change) {
-		//回调函数，可以在此处书写在页面上的输出。
-		console.log("%o", change);
-	}
+  function output(change) {
+    //回调函数，可以在此处书写在页面上的输出。
+    console.log("%o", change);
+  }
 
-	var obj = {a: 1};
-	Object.observe(obj, output); //为对象指定监视时调用的回调函数
+  var obj = {a: 1};
+  Object.observe(obj, output); //为对象指定监视时调用的回调函数
 
-	obj.b = 2; //添加属性
-	obj.a = 2; //修改属性值
-	Object.defineProperties(obj, {a: { enumerable: false}}); //修改属性设定
-	delete obj.b; //删除属性  
+  obj.b = 2; //添加属性
+  obj.a = 2; //修改属性值
+  Object.defineProperties(obj, {a: { enumerable: false}}); //修改属性设定
+  delete obj.b; //删除属性  
 
-	var obj = {
-		n: "dragon",
-		f: function(){
-			console.log("n=%s", this.n);
-		}
-	};
-	obj.f();
+  var obj = {
+    n: "dragon",
+    f: function(){
+      console.log("n=%s", this.n);
+    }
+  };
+  obj.f();
 </script>
 </body>
 </html>

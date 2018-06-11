@@ -1,17 +1,17 @@
 <%@ page contentType="text/html;charset=UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <div title='SlideTabs Horizontal Demo' data-type='form' class="bc-page"
-	data-js='<s:url 
-		value="/ui-libs/jquery/plugins/slidingtabs/1.1.0/themes/default/slidingtabs-horizontal.css" />,<s:url 
-		value="/ui-libs/jquery/plugins/easing/1.3/jquery.easing.js" />,<s:url 
-		value="/ui-libs/jquery/plugins/mousewheel/3.0.4/jquery.mousewheel.min.js" />,<s:url 
-		value="/ui-libs/jquery/plugins/slidingtabs/1.1.0/jquery.slidingtabs.js" />,<s:url 
-		value="/bc-test/tabs/slideTabs.js" />'
-	data-initMethod='bc.slideTabsTest.initHorizontal'
-	data-option='{"width":820}' style="text-align: center;">
-	
+  data-js='<s:url 
+    value="/ui-libs/jquery/plugins/slidingtabs/1.1.0/themes/default/slidingtabs-horizontal.css" />,<s:url 
+    value="/ui-libs/jquery/plugins/easing/1.3/jquery.easing.js" />,<s:url 
+    value="/ui-libs/jquery/plugins/mousewheel/3.0.4/jquery.mousewheel.min.js" />,<s:url 
+    value="/ui-libs/jquery/plugins/slidingtabs/1.1.0/jquery.slidingtabs.js" />,<s:url 
+    value="/bc-test/tabs/slideTabs.js" />'
+  data-initMethod='bc.slideTabsTest.initHorizontal'
+  data-option='{"width":820}' style="text-align: center;">
+  
     <!-- Start HTML - Horizontal Tabs -->
-    <div id="tabs_horizontal" style="padding:20px;margin:auto;text-align: left;">                                                                                      				                               
+    <div id="tabs_horizontal" style="padding:20px;margin:auto;text-align: left;">                                                                                                                             
         <a href="#prev" class="prev"></a>                
         <div id="tabs_container">                                                                                                                                          
             <ul class="tabs">

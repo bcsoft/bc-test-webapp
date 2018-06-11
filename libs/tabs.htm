@@ -9,8 +9,8 @@
 <link rel="stylesheet" type="text/css" href="../../bc/libs/themes/default/tabs.css" />
 <link rel="stylesheet" type="text/css" href="../../bc/libs/themes/default/logger.css" />
 <style type="text/css">
-	body { background-color:#f5f5f5; width:775px; margin:20px auto; }
-	body h1 { font-size:18px; margin:0 0 20px; }
+  body { background-color:#f5f5f5; width:775px; margin:20px auto; }
+  body h1 { font-size:18px; margin:0 0 20px; }
 </style>
 <script type="text/javascript" src="../../ui-libs/jquery/1.6.4/jquery.min.js"></script>
 <script type="text/javascript" src="../../ui-libs/jquery/plugins/easing/1.3/jquery.easing.js"></script>
@@ -23,11 +23,11 @@
 <script type="text/javascript" src="../../bc/libs/tabs.js"></script>
 </head>
 <body class="bc" style="font-size:12px;overflow: auto;">
-	<div id="themeSwitcher" style="position:absolute;right:20px;top:10px;"></div>
-	<div style="height:400px">
+  <div id="themeSwitcher" style="position:absolute;right:20px;top:10px;"></div>
+  <div style="height:400px">
     <h1>Horizontal demo1</h1>
     <div id="tabs1" class="bc-tabs layout-top ui-widget ui-helper-reset" style="width:700px" 
-    	data-cfg="{height:250}">
+      data-cfg="{height:250}">
         <div class="tabsContainer">
             <div class="slideContainer">
                 <ul class="tabs ui-helper-reset">
@@ -43,10 +43,10 @@
             </div>
             <!-- 
             <div class="prev ui-widget-content">
-	            <a href="#" class="prev ui-state-default ui-state-disabled"><span class="ui-icon ui-icon-triangle-1-w"></span></a>
+              <a href="#" class="prev ui-state-default ui-state-disabled"><span class="ui-icon ui-icon-triangle-1-w"></span></a>
             </div>
             <div class="next ui-widget-content">
-	            <a href="#" class="next ui-state-default"><span class="ui-icon ui-icon-triangle-1-e"></span></a>
+              <a href="#" class="next ui-state-default"><span class="ui-icon ui-icon-triangle-1-e"></span></a>
             </div>
              -->
         </div>
@@ -100,13 +100,13 @@
              </div>
         </div>
     </div>
-	</div>
-	<div style="height:400px">
+  </div>
+  <div style="height:400px">
     <h1>Horizontal demo2</h1>
     <div id="tabs2" class="bc-tabs layout-top ui-widget ui-helper-reset" data-cfg="{height:250,animate:false}">
         <div class="tabsContainer">
             <div class="prev ui-widget-content ui-corner-tl">
-	            <a href="#" class="prev ui-state-default ui-state-disabled ui-corner-tl"><span class="ui-icon ui-icon-triangle-1-w"></span></a>
+              <a href="#" class="prev ui-state-default ui-state-disabled ui-corner-tl"><span class="ui-icon ui-icon-triangle-1-w"></span></a>
             </div>
             <div class="slideContainer ui-corner-top">
                 <ul class="tabs ui-helper-reset">
@@ -116,7 +116,7 @@
                 </ul>
             </div>
             <div class="next ui-widget-content ui-corner-tr">
-	            <a href="#" class="next ui-state-default ui-corner-tr"><span class="ui-icon ui-icon-triangle-1-e"></span></a>
+              <a href="#" class="next ui-state-default ui-corner-tr"><span class="ui-icon ui-icon-triangle-1-e"></span></a>
             </div>
         </div>
         <div class="contentContainer ui-helper-reset ui-widget-content">
@@ -141,32 +141,32 @@
         </div>
     </div>
     </div>
-	<script type="text/javascript">
-	jQuery(function($) {
-		//主题切换器
-		$('#themeSwitcher').themeswitcher({
-			initialText:'切换主题',
-			buttonPreText:'主题：',
-			height:400,
-			uiversion:"1.8.16",
-			root:"../.."
-		});
-		
-		logger.toggle();
-		var initTabs = true;
-		if(initTabs){
-			//初始化tabs
-			$('div#tabs1').bctabs({
-				load:function(event,ui){
-					logger.info("load:" + $(this).attr("class"));
-				},
-				show:function(event,ui){
-					logger.info("show:" + ui.content.attr("class"));
-				}
-			});
-			$('div#tabs2').bctabs();
-		}
-	});
-	</script>
+  <script type="text/javascript">
+  jQuery(function($) {
+    //主题切换器
+    $('#themeSwitcher').themeswitcher({
+      initialText:'切换主题',
+      buttonPreText:'主题：',
+      height:400,
+      uiversion:"1.8.16",
+      root:"../.."
+    });
+    
+    logger.toggle();
+    var initTabs = true;
+    if(initTabs){
+      //初始化tabs
+      $('div#tabs1').bctabs({
+        load:function(event,ui){
+          logger.info("load:" + $(this).attr("class"));
+        },
+        show:function(event,ui){
+          logger.info("show:" + ui.content.attr("class"));
+        }
+      });
+      $('div#tabs2').bctabs();
+    }
+  });
+  </script>
 </body>
 </html>

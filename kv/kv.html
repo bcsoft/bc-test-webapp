@@ -5,60 +5,60 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 <body>
-	<label><input type="radio" name="type" value="1" checked>本地存储</label>
-	<label><input type="radio" name="type" value="2">远程存储</label><br><br>
-	<button id="get">Get</button><input type="text" id="key" value="k11,k12,k21,k22"><button id="delete">Delete</button><br><br>
-	<button id="clear">Clear</button><input type="text" id="keyPrefix" value="k2"><br><br>
-	<button id="post">Post</button><input type="text" id="kv" value='{"k11": "v11", "k12": 1, "k21": true}' style="width:40em"><br><br>
+  <label><input type="radio" name="type" value="1" checked>本地存储</label>
+  <label><input type="radio" name="type" value="2">远程存储</label><br><br>
+  <button id="get">Get</button><input type="text" id="key" value="k11,k12,k21,k22"><button id="delete">Delete</button><br><br>
+  <button id="clear">Clear</button><input type="text" id="keyPrefix" value="k2"><br><br>
+  <button id="post">Post</button><input type="text" id="kv" value='{"k11": "v11", "k12": 1, "k21": true}' style="width:40em"><br><br>
 <script type="text/javascript" src="../../ui-libs/jquery/1.7.2/jquery.min.js"></script>
 <script type="text/javascript" src="../../bc/libs/core.js"></script>
 <script type="text/javascript" src="../../bc/libs/kv.js"></script>
 <script type="text/javascript">
-	bc.root = "";
-	bc.kv.TYPE = parseInt($("input[name=type]:checked").val());
-	console.log("type=%s", bc.kv.TYPE);
-	$("input[name=type]").change(function (e) {
-		console.log("type=%s", this.value);
-		bc.kv.TYPE = parseInt(this.value);
-	});
+  bc.root = "";
+  bc.kv.TYPE = parseInt($("input[name=type]:checked").val());
+  console.log("type=%s", bc.kv.TYPE);
+  $("input[name=type]").change(function (e) {
+    console.log("type=%s", this.value);
+    bc.kv.TYPE = parseInt(this.value);
+  });
 
-	$("#get").click(function (e) {
-		var key = $("#key").val().split(",");
-		if(key.length == 1) key = key[0];
-		console.log("get: key=%o", key);
-		$.when(bc.kv.get(key))
-		.done(function(json){
-			console.log("get: result=%o", json);
-		})
-		.fail(function(){
-			console.log("get: fail=%o", arguments);
-		});
-	});
+  $("#get").click(function (e) {
+    var key = $("#key").val().split(",");
+    if(key.length == 1) key = key[0];
+    console.log("get: key=%o", key);
+    $.when(bc.kv.get(key))
+    .done(function(json){
+      console.log("get: result=%o", json);
+    })
+    .fail(function(){
+      console.log("get: fail=%o", arguments);
+    });
+  });
 
-	$("#post").click(function (e) {
-		var kv = $.parseJSON($("#kv").val());
-		console.log("post: kv=%o", kv);
-		$.when(bc.kv.set(kv)).done(function(json){
-			console.log("success=%s, msg=%s", json.success, json.msg);
-		});
-	});
+  $("#post").click(function (e) {
+    var kv = $.parseJSON($("#kv").val());
+    console.log("post: kv=%o", kv);
+    $.when(bc.kv.set(kv)).done(function(json){
+      console.log("success=%s, msg=%s", json.success, json.msg);
+    });
+  });
 
-	$("#delete").click(function (e) {
-		var key = $("#key").val().split(",");
-		if(key.length == 1) key = key[0];
-		console.log("delete: key=%o", key);
-		$.when(bc.kv.remove(key)).done(function(json){
-			console.log("delete: result=%o", json);
-		});
-	});
-	
-	$("#clear").click(function (e) {
-		var keyPrefix = $("#keyPrefix").val();
-		console.log("clear: keyPrefix=%o", keyPrefix);
-		$.when(bc.kv.clear(keyPrefix.length > 0 ? keyPrefix : null)).done(function(json){
-			console.log("clear: result=%o", json);
-		});
-	});
+  $("#delete").click(function (e) {
+    var key = $("#key").val().split(",");
+    if(key.length == 1) key = key[0];
+    console.log("delete: key=%o", key);
+    $.when(bc.kv.remove(key)).done(function(json){
+      console.log("delete: result=%o", json);
+    });
+  });
+  
+  $("#clear").click(function (e) {
+    var keyPrefix = $("#keyPrefix").val();
+    console.log("clear: keyPrefix=%o", keyPrefix);
+    $.when(bc.kv.clear(keyPrefix.length > 0 ? keyPrefix : null)).done(function(json){
+      console.log("clear: result=%o", json);
+    });
+  });
 </script>
 </body>
 </html>
