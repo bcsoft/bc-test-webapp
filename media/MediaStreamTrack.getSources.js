@@ -3,10 +3,10 @@ var audioSelect = document.querySelector("select#audioSource");
 var videoSelect = document.querySelector("select#videoSource");
 var startButton = document.querySelector("button#start");
 console.log("====navigator-start");
-for(var k in navigator) console.log(k + "=" + navigator[k]);
+for (var k in navigator) console.log(k + "=" + navigator[k]);
 console.log("====navigator-end");
 console.log(typeof MediaStreamTrack);
-window.navigator.vibrate(200); 
+window.navigator.vibrate(200);
 navigator.getUserMedia = navigator.getUserMedia ||
   navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
 
@@ -27,7 +27,7 @@ function gotSources(sourceInfos) {
   }
 }
 
-if (typeof MediaStreamTrack === 'undefined'){
+if (typeof MediaStreamTrack === 'undefined') {
   alert('This browser does not support MediaStreamTrack.\n\nTry Chrome Canary.');
 } else {
   MediaStreamTrack.getSources(gotSources);
@@ -40,11 +40,11 @@ function successCallback(stream) {
   videoElement.play();
 }
 
-function errorCallback(error){
+function errorCallback(error) {
   console.log("navigator.getUserMedia error: ", error);
 }
 
-function start(){
+function start() {
   if (!!window.stream) {
     videoElement.src = null;
     window.stream.stop();
