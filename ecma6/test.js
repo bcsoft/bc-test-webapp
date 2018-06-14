@@ -1,12 +1,13 @@
 "use strict";
 var table = document.getElementById("rows");
-function addRow(sn, name, support, remark, min){
-	var tr = table.insertRow(-1);
-	tr.insertCell(tr.cells.length).innerHTML = sn;
-	tr.insertCell(tr.cells.length).innerHTML = name;
-	tr.insertCell(tr.cells.length).innerHTML = support ? "Y" : "N";
-	tr.insertCell(tr.cells.length).innerHTML = remark || "";
-	tr.insertCell(tr.cells.length).innerHTML = min || "";
+
+function addRow(sn, name, support, remark, min) {
+  var tr = table.insertRow(-1);
+  tr.insertCell(tr.cells.length).innerHTML = sn;
+  tr.insertCell(tr.cells.length).innerHTML = name;
+  tr.insertCell(tr.cells.length).innerHTML = support ? "Y" : "N";
+  tr.insertCell(tr.cells.length).innerHTML = remark || "";
+  tr.insertCell(tr.cells.length).innerHTML = min || "";
 }
 
 // 显示 User-Agent
@@ -27,6 +28,6 @@ addRow(4, "Promise", typeof Promise == "function", "Chrome32+ 'Firefox29+ 'Opera
 // 		Fetch 兼容实现: https://github.com/github/fetch
 addRow(4, "fetch", typeof fetch == "function", "Chrome42+ Firefox39+ 'Opera29+", "");
 // Worker https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API
-addRow(4, "Worker", typeof Worker  == "function", "Chrome17+ 'Firefox33+ 'Opera24+", "");
+addRow(4, "Worker", typeof Worker == "function", "Chrome17+ 'Firefox33+ 'Opera24+", "");
 // WebSocket 
-addRow(4, "WebSocket ", typeof WebSocket  == "function", "Chrome17+ ", "");
+addRow(4, "WebSocket ", typeof WebSocket == "function", "Chrome17+ ", "");

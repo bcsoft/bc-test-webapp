@@ -1,82 +1,82 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-	<title>超限自动缩放或裁减打印</title>
-	<style type="text/css">
-		html, body {
-			width:100%;height:100%;margin:0;padding:0;background-color:#cccccc;
-			font-size:14px;font-family: 'Microsoft Yahei', '微软雅黑', '宋体', \5b8b\4f53, Arial;
-		}
-		/* 打印纸张模拟 */
-		.paper {
-			box-sizing: border-box;
-			box-shadow: #000 0px 0px 10px;	/* 模拟纸张边缘的阴影 */
-			margin: 4px auto;				/* 纸张左右居中 */
-			width: calc(210mm * 0.9390);	/* 模拟纸张宽度 */
-			padding: calc(10mm * 0.9390);	/* 模拟打印边距 */
-		}
-		/* 打印内容区模拟 - 白底 */
-		.paper > .content {background-color:#ffffff;text-align:center;font-size:0}
-		.paper > .content > * {font-size:14px}
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <title>超限自动缩放或裁减打印</title>
+  <style type="text/css">
+    html, body {
+      width:100%;height:100%;margin:0;padding:0;background-color:#cccccc;
+      font-size:14px;font-family: 'Microsoft Yahei', '微软雅黑', '宋体', \5b8b\4f53, Arial;
+    }
+    /* 打印纸张模拟 */
+    .paper {
+      box-sizing: border-box;
+      box-shadow: #000 0px 0px 10px;  /* 模拟纸张边缘的阴影 */
+      margin: 4px auto;        /* 纸张左右居中 */
+      width: calc(210mm * 0.9390);  /* 模拟纸张宽度 */
+      padding: calc(10mm * 0.9390);  /* 模拟打印边距 */
+    }
+    /* 打印内容区模拟 - 白底 */
+    .paper > .content {background-color:#ffffff;text-align:center;font-size:0}
+    .paper > .content > * {font-size:14px}
 
-		/* 图片样式控制 */
-		.paper > .content > .box {
-			display: inline-block;
-			overflow: hidden;font-size:0;
-			/* 默认图片居中 */
-			text-align: center;
-			/* 控制最大宽度不超出纸张的极限值（纸张宽度 减 左右最小页边距）*/
-			/*max-width: calc(190mm * 0.9390);*/
-			/* 控制最大高度不超出纸张的极限值（纸张高度 减 上下最小页边距）*/
-			/*max-height: calc(275mm * 0.9390);*/
-		}
-		.box > img {}
-		/* 图片过大就居中并裁剪两侧 */
-		.box.cut {text-align:center}
-		.box.cut > img {display:block;position:relative}
-		/* 图片过大就自动缩小 */
-		.box.zoom > img {max-width:100%;max-height:100%}
+    /* 图片样式控制 */
+    .paper > .content > .box {
+      display: inline-block;
+      overflow: hidden;font-size:0;
+      /* 默认图片居中 */
+      text-align: center;
+      /* 控制最大宽度不超出纸张的极限值（纸张宽度 减 左右最小页边距）*/
+      /*max-width: calc(190mm * 0.9390);*/
+      /* 控制最大高度不超出纸张的极限值（纸张高度 减 上下最小页边距）*/
+      /*max-height: calc(275mm * 0.9390);*/
+    }
+    .box > img {}
+    /* 图片过大就居中并裁剪两侧 */
+    .box.cut {text-align:center}
+    .box.cut > img {display:block;position:relative}
+    /* 图片过大就自动缩小 */
+    .box.zoom > img {max-width:100%;max-height:100%}
 
-		/* 实际打印时的样式控制 */
-		@media print {
-			/* 纸张方向及大小控制
-			 * http://www.w3.org/TR/css3-page/
-			 * http://www.tutorialspoint.com/css/css_paged_media.htm
-			 * 指定纸张方向 size: portrait(纵向)|landscape(横向)
-			 * 指定纸张大小 size: 8.5in 11in|A4 landscape
-			 * 指定页边距 margin: 10mm 或 10mm 10mm 或 10mm 10mm 10mm 5mm
-			 **/
-			@page{
-				size: A4 portrait;		/* A4纵向 */
-				margin: 10mm;			/* 实际打印边距 - 只能控制默认的边距值 */
-			}
-			html, body {background-color: #ffffff}	/* 白底 */
-			.paper {box-shadow: none;width: auto;margin: 0;padding: 0;}
-		}
-	</style>
+    /* 实际打印时的样式控制 */
+    @media print {
+      /* 纸张方向及大小控制
+       * http://www.w3.org/TR/css3-page/
+       * http://www.tutorialspoint.com/css/css_paged_media.htm
+       * 指定纸张方向 size: portrait(纵向)|landscape(横向)
+       * 指定纸张大小 size: 8.5in 11in|A4 landscape
+       * 指定页边距 margin: 10mm 或 10mm 10mm 或 10mm 10mm 10mm 5mm
+       **/
+      @page{
+        size: A4 portrait;    /* A4纵向 */
+        margin: 10mm;      /* 实际打印边距 - 只能控制默认的边距值 */
+      }
+      html, body {background-color: #ffffff}  /* 白底 */
+      .paper {box-shadow: none;width: auto;margin: 0;padding: 0;}
+    }
+  </style>
 </head>
 <body>
 <div class="paper">
 <div class="content">
-	<div class="box"><img src="20x20mm.png" style="width: calc(20mm * 0.9390)"></div>
-	<div class="box"><img src="20x20mm.png" style="width: calc(20mm * 0.9390)"></div>
-	<div class="box"><img src="20x20mm.png" style="width: calc(20mm * 0.9390)"></div>
-	<div class="box"><img src="20x20mm.png" style="width: calc(20mm * 0.9390)"></div>
-	<div class="box cut"><img src="240x40mm.png" style="width: calc(240mm * 0.9390); left: calc((190mm - 240mm) / 2 * 0.9390)"></div>
-	<div class="box zoom"><img src="240x40mm.png" style="width: calc(240mm * 0.9390)"></div>
-	<div style="text-align: left;margin: 0.5em 2em">注：
-		<ul>
-			<li>上图中第1个"200x40mm.png"为超限自动裁剪两侧打印，第2个"200x40mm.png"为超限自动缩小打印</li>
-			<li>纸张可打印宽度的极限值 = 纸张宽度 - 左右最小页边距，如A4纵向：210mm- 2 * 10mm = 190mm</li>
-			<li>纸张可打印高度的极限值 = 纸张高度 - 上下最小页边距，如A4纵向：297mm- 2 * 10mm = 277mm</li>
-			<li>当图片的实际宽度超出纸张可打印宽度的极限值时：<br>
-				1. 若想图片自动缩小，则需要在图片容器添加 zoom 类<br>
-				2. 若想自动居中图片、裁剪两侧超出的部分，则需要在图片容器添加 cut 类，且图片额外计算并设置 left 属性来实现，如：left = calc((190mm - 200mm) / 2 * 0.9390)</li>
-			<li>当图片的实际高度超出纸张可打印高度的极限值时：<br>
-				1. 若想图片自动缩小，则需要在图片容器添加 zoom 类</li>
-		</ul>
-	</div>
+  <div class="box"><img src="20x20mm.png" style="width: calc(20mm * 0.9390)"></div>
+  <div class="box"><img src="20x20mm.png" style="width: calc(20mm * 0.9390)"></div>
+  <div class="box"><img src="20x20mm.png" style="width: calc(20mm * 0.9390)"></div>
+  <div class="box"><img src="20x20mm.png" style="width: calc(20mm * 0.9390)"></div>
+  <div class="box cut"><img src="240x40mm.png" style="width: calc(240mm * 0.9390); left: calc((190mm - 240mm) / 2 * 0.9390)"></div>
+  <div class="box zoom"><img src="240x40mm.png" style="width: calc(240mm * 0.9390)"></div>
+  <div style="text-align: left;margin: 0.5em 2em">注：
+    <ul>
+      <li>上图中第1个"200x40mm.png"为超限自动裁剪两侧打印，第2个"200x40mm.png"为超限自动缩小打印</li>
+      <li>纸张可打印宽度的极限值 = 纸张宽度 - 左右最小页边距，如A4纵向：210mm- 2 * 10mm = 190mm</li>
+      <li>纸张可打印高度的极限值 = 纸张高度 - 上下最小页边距，如A4纵向：297mm- 2 * 10mm = 277mm</li>
+      <li>当图片的实际宽度超出纸张可打印宽度的极限值时：<br>
+        1. 若想图片自动缩小，则需要在图片容器添加 zoom 类<br>
+        2. 若想自动居中图片、裁剪两侧超出的部分，则需要在图片容器添加 cut 类，且图片额外计算并设置 left 属性来实现，如：left = calc((190mm - 200mm) / 2 * 0.9390)</li>
+      <li>当图片的实际高度超出纸张可打印高度的极限值时：<br>
+        1. 若想图片自动缩小，则需要在图片容器添加 zoom 类</li>
+    </ul>
+  </div>
 </div>
 </div>
 </body>

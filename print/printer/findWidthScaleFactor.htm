@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html style="padding:0;margin:0;width:100%;height:100%">
 <head>
-	<meta charset="utf-8">
-	<title>打印调整</title>
-	<style type="text/css">
-		html, body {margin: 0; padding: 0}
-		div.box {margin: 2px 10px; padding: 10px; border: 1px solid #000}
-		span {font-size: 60%; font-weight: normal;}
-		h1, h4, p {margin: 2px 10px}
-		img {margin: 0; padding: 0}
-	</style>
+  <meta charset="utf-8">
+  <title>打印调整</title>
+  <style type="text/css">
+    html, body {margin: 0; padding: 0}
+    div.box {margin: 2px 10px; padding: 10px; border: 1px solid #000}
+    span {font-size: 60%; font-weight: normal;}
+    h1, h4, p {margin: 2px 10px}
+    img {margin: 0; padding: 0}
+  </style>
 </head>
 <body>
 <h1>寻找宽度设置的比例系数</h1>
 <div class="box">
-	<p>测量实际打印出来的尺寸 rw 与设置值 sw 进行对比，寻找比例系数 f = sw / rw</p>
-	<h4>style="width: 100mm"</h4>
-	<img src="100x100mm.png" style="width: 100mm">
-	<h4>style="width: calc(100mm * 0.9390)", 打印机: RICOH Aficio 3025 PCL 5e、HP LaserJet 1020</h4>
-	<img src="100x100mm.png" style="width: calc(100mm * 0.9390)">
-	<div>注：实测在同一打印机下分别使用无边距、边距10mm、边距20mm进行打印，此系数均正确，故系数与边距无关！</div>
+  <p>测量实际打印出来的尺寸 rw 与设置值 sw 进行对比，寻找比例系数 f = sw / rw</p>
+  <h4>style="width: 100mm"</h4>
+  <img src="100x100mm.png" style="width: 100mm">
+  <h4>style="width: calc(100mm * 0.9390)", 打印机: RICOH Aficio 3025 PCL 5e、HP LaserJet 1020</h4>
+  <img src="100x100mm.png" style="width: calc(100mm * 0.9390)">
+  <div>注：实测在同一打印机下分别使用无边距、边距10mm、边距20mm进行打印，此系数均正确，故系数与边距无关！</div>
 </div>
 </body>
 </html>

@@ -1,19 +1,19 @@
 <%@ page contentType="text/html;charset=UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <div title='SlideTabs Vertical Demo' data-type='form' class="bc-page"
-	data-js='<s:url 
-		value="/ui-libs/jquery/plugins/slidingtabs/1.1.0/themes/default/slidingtabs-vertical.css" />,<s:url 
-		value="/ui-libs/jquery/plugins/easing/1.3/jquery.easing.js" />,<s:url 
-		value="/ui-libs/jquery/plugins/mousewheel/3.0.4/jquery.mousewheel.min.js" />,<s:url 
-		value="/ui-libs/jquery/plugins/slidingtabs/1.1.0/jquery.slidingtabs.js" />,<s:url 
-		value="/bc-test/tabs/slideTabs.js" />'
-	data-initMethod='bc.slideTabsTest.initVertical'
-	data-option='{"width":1000}' style="padding:20px;">
-	
-<div id="tabs_vertical" style="">                        	                                                                                          
-	<div id="v_tabs_container">                               
+  data-js='<s:url 
+    value="/ui-libs/jquery/plugins/slidingtabs/1.1.0/themes/default/slidingtabs-vertical.css" />,<s:url 
+    value="/ui-libs/jquery/plugins/easing/1.3/jquery.easing.js" />,<s:url 
+    value="/ui-libs/jquery/plugins/mousewheel/3.0.4/jquery.mousewheel.min.js" />,<s:url 
+    value="/ui-libs/jquery/plugins/slidingtabs/1.1.0/jquery.slidingtabs.js" />,<s:url 
+    value="/bc-test/tabs/slideTabs.js" />'
+  data-initMethod='bc.slideTabsTest.initVertical'
+  data-option='{"width":1000}' style="padding:20px;">
+  
+<div id="tabs_vertical" style="">                                                                                                                    
+  <div id="v_tabs_container">                               
          <a href="#prev" class="prev"></a>
-         <a href="#next" class="next"></a>                                    					
+         <a href="#next" class="next"></a>                                              
          <div class="slide_container">
              <ul class="tabs">
                  <li><a href="#v_content_1" id="v_tab_1" class="tab active">2D Artist<span>NEW</span></a></li>
@@ -31,13 +31,13 @@
                  <li><a href="#v_content_13" id="v_tab_13" class="tab">UI Artist</a></li>
              </ul>
          </div>
-  	</div>
-	<div id="v_content">
+    </div>
+  <div id="v_content">
          <div class="view_container">
               <div id="v_content_1" class="tab_view">
                     <h2>2D Artist</h2>
                     <p>Gameloft, a leading international publisher and developer of video games for mobile phones and consoles, is seeking 2D Artists to join their existing talent pool. Qualified candidates will link up with imaginative design teams to create hot new game titles, fulfilling a wide range of genres from hardcore action to casual simulation. Previous hit games include - Oregon Trail, Hero of Sparta I & II, NOVA, Avatar, Dungeon Hunter, NFL 2010, Real Soccer 2010, New York Nights, Assassin's Creed, Terminator Salvation, Asphalt 5, Let's Golf and Gangstar 1 & 2.</p>
-					<p>As a key member of the development team, you'll create game art within challenging parameters while working with other well known artists from the initial concept art to animation to the final delivery.</p>
+          <p>As a key member of the development team, you'll create game art within challenging parameters while working with other well known artists from the initial concept art to animation to the final delivery.</p>
                     <p>Must-haves/ know-how: </p>
                     <ul>
                       <li>Experience on creating in-game 2D game graphics (for professionally released game or for leisure) </li>
@@ -46,7 +46,7 @@
                       <li> A solid background in drawing, sketching and/or illustration</li>
                       <li> Think creatively, work well independently and as a team player</li>
                     </ul>
-					<p>You'll earn brownie points if you have:</p>
+          <p>You'll earn brownie points if you have:</p>
                     <ul>
                       <li>Experience with Social Games</li>
                       <li>Knowledge about optimization of computer art</li>
@@ -55,9 +55,9 @@
                     </ul>
                     <p>&gt;&gt; Self-taught candidates are welcome!<br />
                       All candidates should expect to take a short assessment test. </p>
-					<div class="text"></div>                            
-           	</div>
-			<div id="v_content_2" class="tab_view">
+          <div class="text"></div>                            
+             </div>
+      <div id="v_content_2" class="tab_view">
                     <h2>2D Concept Artist</h2>
                     <p>Gameloft, a worldwide publisher and developer of video games for mobile phones, is seeking 2D concept Artists to join their existing talent pool. Qualified candidates will link up with imaginative design teams to create hot new game titles, fulfilling a wide range of genres from hardcore action to casual simulation.  Previous hit games include - Oregon Trail, Hero of Sparta I &amp; II, NOVA, Avatar, Dungeon Hunter, NFL 2010, Real Soccer 2010, New York Nights, Assassin's Creed, Terminator Salvation, Asphalt 5, Let's Golf and Gangstar 1&amp;2. As a key member of the development team, you'll create game art within challenging parameters while working with other well known pixel artists from the initial concept art to animation to the final delivery. </p>
                   <p>Must-haves/ know-how: </p>

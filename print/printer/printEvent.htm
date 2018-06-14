@@ -1,44 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-	<title>打印事件</title>
-	<style type="text/css">
-	</style>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <title>打印事件</title>
+  <style type="text/css">
+  </style>
 </head>
 <body>
 检测打印事件
 <input id="printBtn" type="button" value="打印">
 <script type="text/javascript">
-	function doPrint(){
-		console.log("doPrint");
-		var p = window.print();
-		console.log("p=%o", p);
-	}
+  function doPrint(){
+    console.log("doPrint");
+    var p = window.print();
+    console.log("p=%o", p);
+  }
 
-	// https://developer.mozilla.org/zh-CN/docs/Web/API/EventTarget/addEventListenerc
-	document.getElementById("printBtn").addEventListener("click", doPrint, false);
+  // https://developer.mozilla.org/zh-CN/docs/Web/API/EventTarget/addEventListenerc
+  document.getElementById("printBtn").addEventListener("click", doPrint, false);
 
-	// http://tjvantoll.com/2012/06/15/detecting-print-requests-with-javascript/
-	var beforePrint = function() {
-		console.log('onbeforeprint:%o', arguments);
-	};
-	var afterPrint = function() {
-		console.log('onafterprint:%o', arguments);
-	};
-	if (window.matchMedia) {
-		console.log('matchMedia');
-		var mediaQueryList = window.matchMedia('print');
-		mediaQueryList.addListener(function(mql) {
-			if (mql.matches) {
-				beforePrint();
-			} else {
-				afterPrint();
-			}
-		});
-	}
-	window.onbeforeprint = beforePrint;
-	window.onafterprint = afterPrint;
+  // http://tjvantoll.com/2012/06/15/detecting-print-requests-with-javascript/
+  var beforePrint = function() {
+    console.log('onbeforeprint:%o', arguments);
+  };
+  var afterPrint = function() {
+    console.log('onafterprint:%o', arguments);
+  };
+  if (window.matchMedia) {
+    console.log('matchMedia');
+    var mediaQueryList = window.matchMedia('print');
+    mediaQueryList.addListener(function(mql) {
+      if (mql.matches) {
+        beforePrint();
+      } else {
+        afterPrint();
+      }
+    });
+  }
+  window.onbeforeprint = beforePrint;
+  window.onafterprint = afterPrint;
 </script>
 </body>
 </html>
