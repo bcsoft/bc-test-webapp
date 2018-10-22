@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name=viewport content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
+  <title>图像高度不影响弹性框模型高度的例子</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+    }
+
+    .main {
+      display: flex;
+      flex-direction: row;
+      max-width: 400px;
+    }
+
+    .left {
+      flex: none;
+      width: 60%;
+      background-color: blue;
+
+      display: flex;
+      flex-direction: column;
+    }
+
+    .left1 {
+      flex: 1;
+    }
+
+    .left2 {
+      background-color: red;
+    }
+
+    .right {
+      flex: 1;
+      background-color: #333;
+
+      display: flex;
+      flex-direction: column;
+    }
+
+    .right1 {
+      flex: 1;
+      position: relative;
+    }
+    
+    .imageWrapper {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      /* position: absolute;
+      left: 0;
+      top: 0; */
+    }
+
+    .right2 {
+      background-color: blue;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <h2>图像高度不影响弹性框模型高度的例子</h2>
+    <div>
+      <label><input type="radio" v-model="imageUrl" value="./small.jpg">小图</label>
+      <label><input type="radio" v-model="imageUrl" value="./over-all.jpg">大图</label>
+      <label><input type="radio" v-model="imageUrl" value="./over-height.jpg">仅超高图</label>
+      <label><input type="radio" v-model="imageUrl" value="./over-width.jpg">仅超宽图</label>
+    </div>
+    <div class="main">
+      <div class="left">
+        <div class="left1" @click="collapse = !collapse">
+          height=auto<br>
+          collapse={{collapse}}<br>
+          imageUrl={{imageUrl}}<br>
+          点击这里将折叠/展开下面的区域来改变整体高度
+        </div>
+        <div class="left2" :style="{height: collapse ? '30px': '100px'}">
+          height={{collapse ? '30px': '100px'}}
+        </div>
+      </div>
+      <div class="right">
+        <div class="right1">
+          <div class="imageWrapper"><img :src=imageUrl></div>
+          <!-- <img :src=imageUrl> -->
+        </div>
+        <div class="right2">
+          height=auto
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p>原理：<br>
+    1. 图片增加一个包装容器(.imageWrapper)，该容器的宽高通过绝对定位设置为跟随其 parent 元素的高度和宽度，而不是由子元素内容决定。<br>
+       另外设置此容器为弹性模型，用于控制其子元素图片水平、垂直居中（justify-content: center;align-items: center）。<br>
+    2. 图片 CSS 设为 "max-width: 100%;max-height: 100%"，使其不超出容器最大尺寸并保持长宽比不变形。<br>
+  </p>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.min.js"></script>
+  <script src="./index.js"></script>
+</body>
+
+</html>
