@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Table</title>
+  <link type="text/css" rel="stylesheet" href="flex-table.css" />
+</head>
+
+<body>
+  <div id="app">
+    <div class="options">
+      <div>
+        <label>
+          <input type="checkbox" v-model="customWidth" />
+          Custom width:
+        </label>
+        <input type="range" min="100" max="1300" step="5" v-model="widthValue" />
+        {{widthValue}} {{unit}}
+      </div>
+      <div>
+        <label>
+          <input type="checkbox" v-model="customHeight" />
+          Custom height:
+        </label>
+        <input type="range" min="150" max="500" step="5" v-model="heightValue" />
+        {{heightValue}} {{unit}}
+      </div>
+      <div>
+        弹性元素：
+        <label><input type="radio" v-model="flexEl" value="div">div</label>
+        <label><input type="radio" v-model="flexEl" value="table">table</label>
+      </div>
+      <div>
+        水平对齐：
+        <label><input type="radio" v-model="hAlign" value="align-left">左</label>
+        <label><input type="radio" v-model="hAlign" value="align-center">中</label>
+        <label><input type="radio" v-model="hAlign" value="align-right">右</label>
+      </div>
+      <div>
+        垂直对齐：
+        <label><input type="radio" v-model="vAlign" value="align-top">上</label>
+        <label><input type="radio" v-model="vAlign" value="align-middle">中</label>
+        <label><input type="radio" v-model="vAlign" value="align-bottom">下</label>
+      </div>
+    </div>
+    <div class="v-layout" :style="{width: width, height: height}">
+      <div>Top div</div>
+      <div :class="{'flex': flexEl === 'table'}">
+        <table>
+          <colgroup>
+            <col style="width: 60px">
+            <col style="width: auto">
+          </colgroup>
+          <thead>
+            <tr>
+              <th>SN</th>
+              <th>Middle table</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td :class="[hAlign, vAlign]">1</td>
+              <td :class="[hAlign, vAlign]">Name 1</td>
+            </tr>
+            <tr>
+              <td :class="[hAlign, vAlign]">2</td>
+              <td :class="[hAlign, vAlign]">Name 2</td>
+            </tr>
+            <tr class="auto-height">
+              <td :class="[hAlign, vAlign]">3</td>
+              <td :class="[hAlign, vAlign]">
+                <div class="min-height full-height h-layout" :class="[hAlign, vAlign]" style="background-color: yellow">
+                  table - Auto Height</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div :class="['min-height', 'h-layout', flexEl === 'div' ? 'flex' : '']">
+        <div :class="[hAlign, vAlign]" style="border: 1px solid #666; width: 60px">SN</div>
+        <div :class="[hAlign, vAlign, 'flex']" style="border: 1px solid #666">div - Auto Height</div>
+      </div>
+    </div>
+    <p>
+      1. 将 table 指定为弹性元素时，其高度并不会自动充满弹性高度。<br>
+      解决方法是套一层 div 容器，设置此 div 为弹性元素，然后设置 table 的 height=100%，并保留一个 tr 设置 height=auto。<br>
+      但是如果 table 的内容已经超出了弹性区高度，只会内容溢出，table 不会压缩高度来适应。<br>
+      如果确认 table 内容不爆，这样用很好。
+      > table height=100% 需要 chrome51+ 才支持。
+    </p>
+    <p>2. tr、td、th 是不支持设置 min-height 的，如果要实现行的最小高度，可以通过在 td 内增加一个 div 容器来包裹内容，
+      然后设置这个 div 的 min-height。
+    </p>
+    <p>3. 如果一个 div 被设置为弹性框模型 (display:flex)，则 text-align 样式的设置就不会起效，<br>
+      要改用 justify-content 来控制对齐方式(多行间用 align-content)，<br>
+      注意 align-items 是用来控制同一行元素在 cross-axis 轴方向的拉伸方式，不是用于对齐元素。
+    </p>
+  </div>
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script>
+  <script type="text/javascript" src="./flex-table.js"></script>
+</body>
+
+</html>

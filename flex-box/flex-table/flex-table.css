@@ -1,0 +1,110 @@
+.v-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border: 1px solid #666;
+}
+
+.v-layout>* {
+  margin: 5px;
+  border: 1px solid #666;
+}
+
+.h-layout {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+
+.flex {
+  flex: 1 1 0;
+}
+
+table {
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+tr {
+  height: 40px;
+}
+
+.auto-height {
+  height: auto;
+}
+
+.auto-height>td {
+  position: relative;
+}
+
+.min-height {
+  min-height: 40px;
+}
+
+.full-height {
+  height: 100%;
+}
+
+th, td {
+  border: 1px solid blue;
+}
+
+/* 字体对齐 */
+
+.align-center {
+  text-align: center;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-top {
+  vertical-align: top;
+}
+
+.align-middle {
+  vertical-align: middle;
+}
+
+.align-bottom {
+  vertical-align: bottom;
+}
+
+.h-layout>* {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.h-layout>.align-top, .h-layout.align-top {
+  align-items: flex-start;
+}
+
+.h-layout>.align-middle, .h-layout.align-middle {
+  align-items: center;
+}
+
+.h-layout>.align-bottom, .h-layout.align-bottom {
+  align-items: flex-end;
+}
+
+.h-layout>.align-left, .h-layout.align-left {
+  justify-content: flex-start
+}
+
+.h-layout>.align-center, .h-layout.align-center {
+  justify-content: center
+}
+
+.h-layout>.align-right, .h-layout.align-right {
+  justify-content: flex-end
+}
